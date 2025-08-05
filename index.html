@@ -3,18 +3,14 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>歡迎Ping Hsu網站頁面</title>
+  <title>Ping Hsu 的互動履歷</title>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <div id="welcome">歡迎來到Ping Hsu的網站！</div>
+  <div id="welcome">歡迎來到 Ping Hsu 的網站！</div>
   <div id="goodWords">今天是美好的一天，願你心情愉快！🌞</div>
 
-  <!-- 這是 HTML 註解，瀏覽器不會顯示這段文
-  <div id="weather">正在載入天氣資訊...</div>
-   -->
-
-  <p id="message"></p>
+  <div id="message"></div>
 
   <button class="btn btn-gradient" onclick="open104Home()">前往 104</button>
   <button class="btn btn-red" onclick="openPingHsu104()">前往 PingHsu's 104</button>
@@ -22,76 +18,13 @@
   <button class="btn btn-yellow" onclick="openLinkedInPingHsu()">前往 PingHsu's LinkedIn</button>
   <button class="btn btn-pink" onclick="openNotion()">前往 Notion</button>
 
-<script>
-/*
-async function loadWeather() {
-  try {
-    // 使用 ip-api.com 取得地理座標
-    const corsProxy = 'https://cors-anywhere.herokuapp.com/';
-    let r1 = await fetch(corsProxy + 'https://ip-api.com/json/?fields=status,message,city,lat,lon');
+  <div id="chatbot">
+    <h3>🤖 與 PingBot 聊聊</h3>
+    <div id="chatbox"></div>
+    <input type="text" id="userInput" placeholder="輸入你的問題..." />
+    <button onclick="sendMessage()">送出</button>
+  </div>
 
-    let geo = await r1.json();
-    if (geo.status !== 'success') {
-      throw new Error(geo.message || '定位失敗');
-    }
-    const {city, lat, lon} = geo;
-
-    // 使用 Open‑Meteo 免費天氣 API 取得當前天氣
-    let r2 = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`);
-    let weather = await r2.json();
-
-    if (weather.current_weather) {
-      const temp = weather.current_weather.temperature;
-      const code = weather.current_weather.weathercode;
-      const text = weatherCodeToText(code);
-      document.getElementById('weather').textContent = `目前位置：${city}，溫度約 ${temp}°C，天氣：${text}`;
-    } else {
-      throw new Error('天氣格式錯誤');
-    }
-  } catch (e) {
-    console.error(e);
-    document.getElementById('weather').textContent = '載入天氣時發生錯誤：' + e.message;
-  }
-}
-
-function weatherCodeToText(c) {
-  const m = {
-    0:'晴朗',1:'主要晴朗',2:'部分多雲',3:'多雲',45:'薄霧',48:'霧凇',
-    51:'輕微毛毛雨',53:'中度毛毛雨',55:'濃毛毛雨',
-    61:'小雨',63:'中雨',65:'大雨',
-    80:'小雨陣雨',81:'中雨陣雨',82:'大雨陣雨',
-    95:'雷雨',96:'輕微雷雨帶冰雹',99:'強雷雨帶冰雹'
-  };
-  return m[c] || '未知天氣';
-}
-*/
-
-//window.onload = loadWeather;
-
-// 注意前面整合的按鈕函式與訊息顯示
-function showMessage(text) {
-  document.getElementById('message').textContent = text;
-}
-function open104Home() {
-  showMessage('Button clicked: 前往 104');
-  window.open('https://www.104.com.tw','_blank','noopener,noreferrer');
-}
-function openPingHsu104() {
-  showMessage('Button clicked: 前往 PingHsu\'s 104');
-  window.open('https://www.104.com.tw/jobbank/...','_blank','noopener,noreferrer');
-}
-function openLinkedIn() {
-  showMessage('Button clicked: 前往 LinkedIn');
-  window.open('https://www.linkedin.com/','_blank','noopener,noreferrer');
-}
-function openLinkedInPingHsu() {
-  showMessage('Button clicked: 前往 PingHsu\'s LinkedIn');
-  window.open('https://www.linkedin.com/in/ping-h-32b485104/','_blank','noopener,noreferrer');
-}
-function openNotion() {
-  showMessage('Button clicked: 前往 Notion');
-  window.open('https://www.notion.com/zh-tw/personal','_blank','noopener,noreferrer');
-}
-</script>
+  <script src="script.js"></script>
 </body>
 </html>
