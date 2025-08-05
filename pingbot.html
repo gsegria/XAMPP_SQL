@@ -26,7 +26,8 @@
   <!-- 返回按鈕 -->
   <div style="margin-top: 20px;">
     <button onclick="goBack()" style="background-color: #ccc; padding: 8px 16px; border: none; cursor: pointer;">🔙 返回上一頁</button>
-    <button onclick="goHome()" style="background-color: #ccc; padding: 8px 16px; border: none; cursor: pointer;">🏠 返回主頁</button>
+    <button onclick="goLocalHome()" style="background-color: #ccc; padding: 8px 16px; border: none; cursor: pointer;">🏠 返回Localhost主頁</button>
+    <button onclick="goGitHome()" style="background-color: #ccc; padding: 8px 16px; border: none; cursor: pointer;">🏠 返回Git主頁</button>
   </div>
 
   <script src="Pingbot.js"></script>
@@ -44,9 +45,11 @@
     function goBack() {
       window.history.back();
     }
-
-    function goHome() {
+    function goLocalHome() {
       window.location.href = "http://localhost/chatbot/index.html";
+    }
+    function goGitHome() {
+      window.location.href = "https://gsegria.github.io/XAMPP_SQL/index.html";
     }
   </script>
 </body>
