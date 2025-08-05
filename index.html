@@ -1,78 +1,12 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>歡迎頁面與天氣示範</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 30px;
-      text-align: center;
-      background-color: #f0f4f8;
-    }
-    #welcome {
-      font-size: 24px;
-      color: #333;
-      margin-bottom: 5px;
-    }
-    #goodWords {
-      font-size: 18px;
-      color: #555;
-      margin-bottom: 20px;
-      font-style: italic;
-    }
-    #weather {
-      font-size: 20px;
-      color: #444;
-      margin-bottom: 40px;
-    }
-    p#message {
-      font-size: 18px;
-      color: #222;
-      margin-top: 20px;
-      min-height: 24px;
-    }
-    button.btn {
-      border: none;
-      padding: 12px 28px;
-      margin: 10px;
-      border-radius: 25px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 3px 7px rgba(0,0,0,0.15);
-      min-width: 160px;
-      white-space: nowrap;
-      color: white;
-    }
-    .btn-gradient {
-      background: linear-gradient(45deg, #6a11cb, #2575fc);
-    }
-    .btn-gradient:hover {
-      background: linear-gradient(45deg, #2575fc, #6a11cb);
-      transform: translateY(-3px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.25);
-    }
-    .btn-red {
-      background-color: #e74c3c;
-    }
-    .btn-red:hover {
-      background-color: #c0392b;
-      transform: translateY(-3px);
-    }
-    .btn-green {
-      background-color: #27ae60;
-    }
-    .btn-green:hover {
-      background-color: #1e8449;
-      transform: translateY(-3px);
-    }
-  </style>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-
   <div id="welcome">歡迎來到我的網站！</div>
   <div id="goodWords">今天是美好的一天，願你心情愉快！🌞</div>
   <div id="weather">正在載入天氣資訊...</div>
@@ -85,97 +19,67 @@
   <button class="btn btn-green" onclick="openuLinkedInPingHsu()">前往 PingHsu's LinkedIn</button>
 
 <script>
-  function showMessage(text) {
-    document.getElementById('message').textContent = text;
-  }
-
-  function open104Home() {
-    showMessage('Button clicked: 前往 104');
-    window.open('https://www.104.com.tw', '_blank', 'noopener,noreferrer');
-  }
-
-  function openPingHsu104() {
-    showMessage('Button clicked: 前往 PingHsu\'s 104');
-    window.open('https://www.104.com.tw/jobbank/custview/index.php?r=cust&j=4a4b432f3e5c3f284e323c1d1d1d1d5f2443a363189j99', '_blank', 'noopener,noreferrer');
-  }
-
-  function openuLinkedIn() {
-    showMessage('Button clicked: 前往 LinkedIn');
-    window.open('https://www.linkedin.com/', '_blank', 'noopener,noreferrer');
-  }
-
-  function openuLinkedInPingHsu() {
-    showMessage('Button clicked: 前往 PingHsu\'s LinkedIn');
-    window.open('https://www.linkedin.com/in/ping-h-32b485104/', '_blank', 'noopener,noreferrer');
-  }
-
-  // 使用 freegeoip.app 獲取用戶地理位置，再用 open-meteo.com 查天氣（免費無需 API key）
-  async function loadWeather() {
-    try {
-      // 取得用戶 IP 定位資訊
-      let resGeo = await fetch('https://freegeoip.app/json/');
-      let geoData = await resGeo.json();
-      const lat = geoData.latitude;
-      const lon = geoData.longitude;
-      const city = geoData.city || geoData.region_name || geoData.country_name;
-
-      // 用 open-meteo API 查詢氣溫和天氣代碼
-      // open-meteo 氣象碼說明 https://open-meteo.com/en/docs#weathercode
-      let resWeather = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`);
-      let weatherData = await resWeather.json();
-
-      if(weatherData && weatherData.current_weather) {
-        const temp = weatherData.current_weather.temperature;
-        const weatherCode = weatherData.current_weather.weathercode;
-
-        const weatherText = weatherCodeToText(weatherCode);
-
-        document.getElementById('weather').textContent = `目前位置：${city}，溫度約 ${temp}°C，天氣：${weatherText}`;
-      } else {
-        document.getElementById('weather').textContent = '天氣資訊暫時無法取得。';
-      }
-    } catch(e) {
-      console.error(e);
-      document.getElementById('weather').textContent = '載入天氣時發生錯誤。';
+async function loadWeather() {
+  try {
+    // 使用 ip-api.com 取得地理座標
+    let r1 = await fetch('http://ip-api.com/json/?fields=status,message,city,lat,lon');
+    let geo = await r1.json();
+    if (geo.status !== 'success') {
+      throw new Error(geo.message || '定位失敗');
     }
-  }
+    const {city, lat, lon} = geo;
 
-  // 將 open-meteo 的 weathercode 轉成文字
-  function weatherCodeToText(code) {
-    const mapping = {
-      0: '晴朗',
-      1: '主要晴朗',
-      2: '部分多雲',
-      3: '多雲',
-      45: '薄霧',
-      48: '霧凇',
-      51: '輕微毛毛雨',
-      53: '中度毛毛雨',
-      55: '濃毛毛雨',
-      56: '輕微冰冷毛毛雨',
-      57: '濃冰冷毛毛雨',
-      61: '小雨',
-      63: '中雨',
-      65: '大雨',
-      66: '輕微冰冷雨',
-      67: '濃冰冷雨',
-      71: '小雪',
-      73: '中雪',
-      75: '大雪',
-      77: '雪粒',
-      80: '小雨陣雨',
-      81: '中雨陣雨',
-      82: '大雨陣雨',
-      85: '小雪陣雪',
-      86: '大雪陣雪',
-      95: '雷雨',
-      96: '輕微雷雨帶冰雹',
-      99: '強雷雨帶冰雹'
-    };
-    return mapping[code] || '未知天氣';
-  }
+    // 使用 Open‑Meteo 免費天氣 API 取得當前天氣
+    let r2 = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`);
+    let weather = await r2.json();
 
-  window.onload = loadWeather;
+    if (weather.current_weather) {
+      const temp = weather.current_weather.temperature;
+      const code = weather.current_weather.weathercode;
+      const text = weatherCodeToText(code);
+      document.getElementById('weather').textContent = `目前位置：${city}，溫度約 ${temp}°C，天氣：${text}`;
+    } else {
+      throw new Error('天氣格式錯誤');
+    }
+  } catch (e) {
+    console.error(e);
+    document.getElementById('weather').textContent = '載入天氣時發生錯誤：' + e.message;
+  }
+}
+
+function weatherCodeToText(c) {
+  const m = {
+    0:'晴朗',1:'主要晴朗',2:'部分多雲',3:'多雲',45:'薄霧',48:'霧凇',
+    51:'輕微毛毛雨',53:'中度毛毛雨',55:'濃毛毛雨',
+    61:'小雨',63:'中雨',65:'大雨',
+    80:'小雨陣雨',81:'中雨陣雨',82:'大雨陣雨',
+    95:'雷雨',96:'輕微雷雨帶冰雹',99:'強雷雨帶冰雹'
+  };
+  return m[c] || '未知天氣';
+}
+
+window.onload = loadWeather;
+
+// 注意前面整合的按鈕函式與訊息顯示
+function showMessage(text) {
+  document.getElementById('message').textContent = text;
+}
+function open104Home() {
+  showMessage('Button clicked: 前往 104');
+  window.open('https://www.104.com.tw','_blank','noopener,noreferrer');
+}
+function openPingHsu104() {
+  showMessage('Button clicked: 前往 PingHsu\'s 104');
+  window.open('https://www.104.com.tw/jobbank/...','_blank','noopener,noreferrer');
+}
+function openuLinkedIn() {
+  showMessage('Button clicked: 前往 LinkedIn');
+  window.open('https://www.linkedin.com/','_blank','noopener,noreferrer');
+}
+function openuLinkedInPingHsu() {
+  showMessage('Button clicked: 前往 PingHsu\'s LinkedIn');
+  window.open('https://www.linkedin.com/in/ping-h-32b485104/','_blank','noopener,noreferrer');
+}
 </script>
 </body>
 </html>
