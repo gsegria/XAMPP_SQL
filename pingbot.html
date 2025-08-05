@@ -1,0 +1,53 @@
+<!DOCTYPE html> 
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PingBot 聊天履歷</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="welcome">👋 歡迎與 PingBot 聊聊！</div>
+
+  <div>
+    <label for="model">選擇模型：</label>
+    <select id="model">
+      <option value="gpt">OpenAI GPT-3.5</option>
+      <option value="hf">Hugging Face</option>
+    </select>
+  </div>
+
+  <div id="chatbot">
+    <div id="chatbox"></div>
+    <input type="text" id="userInput" placeholder="輸入問題..." />
+    <button onclick="sendMessage()">送出</button>
+  </div>
+
+  <!-- 返回按鈕 -->
+  <div style="margin-top: 20px;">
+    <button onclick="goBack()" style="background-color: #ccc; padding: 8px 16px; border: none; cursor: pointer;">🔙 返回上一頁</button>
+    <button onclick="goHome()" style="background-color: #ccc; padding: 8px 16px; border: none; cursor: pointer;">🏠 返回主頁</button>
+  </div>
+
+  <script src="Pingbot.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const input = document.getElementById("userInput");
+      input.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          sendMessage();
+        }
+      });
+    });
+
+    function goBack() {
+      window.history.back();
+    }
+
+    function goHome() {
+      window.location.href = "http://localhost/chatbot/index.html";
+    }
+  </script>
+</body>
+</html>

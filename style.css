@@ -20,6 +20,11 @@ body {
 .btn-green { background-color: #27ae60; }
 .btn-yellow { background-color: #f1c40f; color: black; }
 .btn-pink { background-color: #ff69b4; }
+.btn-purple   { background-color: #8e44ad; }     /* 紫色 */
+.btn-gray     { background-color: #7f8c8d; }     /* 灰色 */
+.btn-black    { background-color: #000000; }     /* 黑色 */
+.btn-white    { background-color: #ffffff; color: #333; border: 1px solid #ccc; } /* 白底黑字 */
+.btn-orange   { background-color: #f39c12; }     /* 橙色 */
 
 #chatbot {
   border: 1px solid #ccc;
