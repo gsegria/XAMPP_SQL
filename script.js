@@ -11,5 +11,5 @@ function openPingHsu104() {
 }
 
 function openPingHsuLinkedIn() {
-    window.open('https://www.linkedin.com/in/your-linkedin-id', '_blank');
+    window.open('https://www.linkedin.com/in/ping-h-32b485104/', '_blank');
 }
