@@ -23,7 +23,7 @@
 async function loadWeather() {
   try {
     // 使用 ip-api.com 取得地理座標
-    let r1 = await fetch('http://ip-api.com/json/?fields=status,message,city,lat,lon');
+    let r1 = await fetch('https://ip-api.com/json/?fields=status,message,city,lat,lon');
     let geo = await r1.json();
     if (geo.status !== 'success') {
       throw new Error(geo.message || '定位失敗');
