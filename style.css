@@ -1,193 +1,25 @@
 body {
   font-family: Arial, sans-serif;
-  text-align: center;
-  margin-top: 50px;
+  padding: 20px;
   background-color: #f5f5f5;
 }
-
-h1 {
-  color: #333;
+#welcome, #goodWords {
+  font-size: 1.5em;
+  margin-bottom: 10px;
 }
-
-/* 通用按鈕 */
 .btn {
-  border: none;
-  padding: 15px 35px;
-  margin: 10px;
-  border-radius: 30px;
-  font-size: 18px;
+  margin: 5px;
+  padding: 10px 20px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  min-width: 180px;
-  white-space: nowrap;
+  border: none;
+  color: white;
+  border-radius: 5px;
 }
-
-/* 漸層按鈕 */
-.btn-gradient {
-  background: linear-gradient(45deg, #6a11cb, #2575fc);
-  color: #fff;
-}
-
-.btn-gradient:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 12px rgba(0,0,0,0.2);
-  background: linear-gradient(45deg, #2575fc, #6a11cb);
-}
-/* 藍色按鈕 */
-.btn-blue {
-  background-color: #3498db;
-  color: #fff;
-}
-.btn-blue:hover {
-  background-color: #2980b9;
-  transform: translateY(-3px);
-}
-
-/* 紫色按鈕 */
-.btn-purple {
-  background-color: #9b59b6;
-  color: #fff;
-}
-.btn-purple:hover {
-  background-color: #7d3c98;
-  transform: translateY(-3px);
-}
-
-/* 橘色按鈕 */
-.btn-orange {
-  background-color: #e67e22;
-  color: #fff;
-}
-.btn-orange:hover {
-  background-color: #ca6f1e;
-  transform: translateY(-3px);
-}
-
-/* 粉紅色按鈕 */
-.btn-pink {
-  background-color: #fd79a8;
-  color: #fff;
-}
-.btn-pink:hover {
-  background-color: #e84393;
-  transform: translateY(-3px);
-}
-
-/* 天空藍按鈕 */
-.btn-sky {
-  background-color: #00cec9;
-  color: #fff;
-}
-.btn-sky:hover {
-  background-color: #009688;
-  transform: translateY(-3px);
-}
-
-/* 深灰色按鈕 */
-.btn-dark {
-  background-color: #34495e;
-  color: #fff;
-}
-.btn-dark:hover {
-  background-color: #2c3e50;
-  transform: translateY(-3px);
-}
-
-/* 淺綠色按鈕 */
-.btn-lightgreen {
-  background-color: #2ecc71;
-  color: #fff;
-}
-.btn-lightgreen:hover {
-  background-color: #27ae60;
-  transform: translateY(-3px);
-}
-
-/* 咖啡色按鈕 */
-.btn-brown {
-  background-color: #6f4e37;
-  color: #fff;
-}
-.btn-brown:hover {
-  background-color: #5a3e2b;
-  transform: translateY(-3px);
-}
-
-/* 薄荷綠按鈕 */
-.btn-mint {
-  background-color: #1abc9c;
-  color: #fff;
-}
-.btn-mint:hover {
-  background-color: #16a085;
-  transform: translateY(-3px);
-}
-
-/* 鮮紅色按鈕 */
-.btn-crimson {
-  background-color: #dc143c;
-  color: #fff;
-}
-.btn-crimson:hover {
-  background-color: #b01030;
-  transform: translateY(-3px);
-}
-
-/* 紅色按鈕 */
-.btn-red {
-  background-color: #e74c3c;
-  color: #fff;
-}
-
-.btn-red:hover {
-  background-color: #c0392b;
-  transform: translateY(-3px);
-}
-
-/* 綠色按鈕 */
-.btn-green {
-  background-color: #27ae60;
-  color: #fff;
-}
-
-.btn-green:hover {
-  background-color: #1e8449;
-  transform: translateY(-3px);
-}
-
-/* 黃色按鈕 */
-.btn-yellow {
-  background-color: #f1c40f;
-  color: #333;
-  font-weight: bold;
-}
-
-.btn-yellow:hover {
-  background-color: #d4ac0d;
-  transform: translateY(-3px);
-}
-
-/* 外框透明按鈕 */
-.btn-outline {
-  background: transparent;
-  border: 2px solid #333;
-  color: #333;
-}
-
-.btn-outline:hover {
-  background-color: rgba(0,0,0,0.1);
-  transform: translateY(-3px);
-}
-
-/* 訊息文字 */
-#message {
-  font-size: 20px;
-  color: #333;
-  margin-top: 20px;
-}
-
-
+.btn-gradient { background: linear-gradient(to right, #00c6ff, #0072ff); }
+.btn-red { background-color: #e74c3c; }
+.btn-green { background-color: #27ae60; }
+.btn-yellow { background-color: #f1c40f; color: black; }
+.btn-pink { background-color: #ff69b4; }
 
 #chatbot {
   border: 1px solid #ccc;
@@ -221,4 +53,3 @@ h1 {
 .bot-msg.error {
   color: red;
 }
-
