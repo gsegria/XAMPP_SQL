@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>简单小游戏</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+    .game-container {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+      background-color: lightgray;
+      position: relative;
+    }
+    .player {
+      width: 30px;
+      height: 30px;
+      background-color: blue;
+      position: absolute;
+      bottom: 0;
+      left: 85px;
+    }
+    .score {
+      font-size: 24px;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>简单跳跃小游戏</h1>
+  
+  <div class="game-container">
+    <div class="player" id="player"></div>
+  </div>
+  
+  <div class="score">
+    <p>分数: <span id="score">0</span></p>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>

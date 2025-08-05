@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>跳跃闯关游戏</title>
+<link rel="stylesheet" href="css/game.css" />
+</head>
+<body>
+  <header>
+    <h1>跳跃闯关游戏</h1>
+  </header>
+
+  <main class="game-container">
+
+    <button id="toggle-settings-btn" class="control-btn">显示/隐藏 高级设置</button>
+    <button id="reset-settings-btn" class="control-btn" style="display:none;">还原默认参数</button>
+
+    <div class="settings-panel" id="settings-panel" style="display:none;">
+      <h2>游戏参数设置</h2>
+
+      <label>障碍物最小间隔 (ms): 
+        <input type="number" id="obstacle-spacing" value="2000" min="500" step="100" />
+      </label>
+
+      <label>画面卷动基础速度: 
+        <input type="number" id="scroll-speed" value="1" step="0.1" min="0.1" max="10" />
+      </label>
+
+      <label>游戏速度倍率: 
+        <input type="number" id="game-speed" value="1" step="0.1" min="0.1" max="10" />
+      </label>
+      
+      <label>画面宽度 (px): 
+      <input type="number" id="screen-width" value="640" min="320" max="1920" />
+      </label>
+
+      <label>画面高度 (px): 
+        <input type="number" id="screen-height" value="480" min="240" max="1080" />
+      </label>
+
+      <label>
+        <input type="checkbox" id="fit-window" />
+        符合视窗大小
+      </label>
+
+      <hr />
+
+      <h3>进阶参数</h3>
+
+      <label>障碍物大小 (px): 
+        <input type="number" id="obstacle-size" value="30" min="10" max="100" />
+      </label>
+
+      <label>玩家跳跃高度 (px): 
+        <input type="number" id="jump-height" value="150" min="50" max="300" />
+      </label>
+
+      <label>重力加速度 (px/帧²): 
+        <input type="number" id="gravity" value="2" step="0.1" min="0.1" max="5" />
+      </label>
+    </div>
+
+    <div class="game-area">
+      <div id="player" class="player"></div>
+    </div>
+
+    <div class="score">
+      <p>分数: <span id="score">0</span></p>
+      <p>关卡: <span id="level">1</span></p>
+    </div>
+
+    <button id="start-btn" class="control-btn">开始游戏</button>
+    <button id="pause-btn" class="control-btn" style="display:none;">暂停</button>
+    <button id="resume-btn" class="control-btn" style="display:none;">继续</button>
+    <button id="submit-score" class="submit-btn" style="display:none;">提交分数</button>
+
+    <br />
+    <a href="index.html" class="back-home">返回首页</a>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 游戏开发团队</p>
+  </footer>
+
+<script src="js/game_jmp.js"></script>
+</body>
+</html>
