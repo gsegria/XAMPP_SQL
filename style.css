@@ -186,3 +186,39 @@ h1 {
   color: #333;
   margin-top: 20px;
 }
+
+
+
+#chatbot {
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 300px;
+  margin-top: 20px;
+  background: #fff;
+  border-radius: 10px;
+}
+#chatbox {
+  height: 200px;
+  overflow-y: auto;
+  border: 1px solid #aaa;
+  padding: 5px;
+  background: #f9f9f9;
+  margin-bottom: 5px;
+}
+.user-msg, .bot-msg {
+  margin: 5px 0;
+  padding: 5px;
+  border-radius: 5px;
+}
+.user-msg {
+  background: #d0f0ff;
+  text-align: right;
+}
+.bot-msg {
+  background: #e6ffe6;
+  text-align: left;
+}
+.bot-msg.error {
+  color: red;
+}
+
