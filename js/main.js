@@ -19,7 +19,7 @@ function openResume() {
       resumeUrl = 'http://localhost/chatbot/resume.php';
     } else {
       // GitHub Pages 等線上環境：開啟靜態 HTML 頁面
-      resumeUrl = 'https://gsegria.github.io/XAMPP_SQL/resume.index.html';
+      resumeUrl = 'https://gsegria.github.io/XAMPP_SQL/resume.html';
     }
 
     window.open(resumeUrl, 'ResumeWindow', 'width=900,height=700');
