@@ -2,10 +2,28 @@ function showMessage(text) {
   document.getElementById('message').textContent = text;
 }
 
+// function openResume() {
+//   showMessage('Button clicked: 打開 Resume');
+//   window.open('resume.php', 'ResumeWindow', 'width=900,height=700');
+// }
 function openResume() {
-  showMessage('Button clicked: 打開 Resume');
-  window.open('resume.php', 'ResumeWindow', 'width=900,height=700');
-}
+    showMessage('Button clicked: 打開 Resume');
+
+    // 取得目前網址的 host
+    const host = window.location.hostname;
+
+    let resumeUrl = '';
+
+    if (host === 'localhost' || host === '127.0.0.1') {
+      // 本地開發環境：開啟 PHP 頁面
+      resumeUrl = 'http://localhost/chatbot/resume.php';
+    } else {
+      // GitHub Pages 等線上環境：開啟靜態 HTML 頁面
+      resumeUrl = 'https://gsegria.github.io/XAMPP_SQL/resume.index.html';
+    }
+
+    window.open(resumeUrl, 'ResumeWindow', 'width=900,height=700');
+  }
 
 function open104Home() {
   showMessage('Button clicked: 前往 104');
