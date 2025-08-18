@@ -15,7 +15,7 @@ function openResume(){ window.open('resume.html','_blank'); }
 function open104Home(){ window.open('https://www.104.com.tw','_blank'); }
 function openPingHsu104(){ window.open('https://pda.104.com.tw/profile/share/djb5ee77CIyTwJkJtemg443b6j7qkt40','_blank'); }
 function openLinkedIn(){ window.open('https://www.linkedin.com','_blank'); }
-function openLinkedInPingHsu(){ window.open('https://www.linkedin.com/in/your-linkedin','_blank'); }
+function openLinkedInPingHsu(){ window.open('https://www.linkedin.com/in/ping-h-32b485104/','_blank'); }
 function openNotion(){ window.open('https://www.notion.so','_blank'); }
 function openPingbot(){
   const el = document.getElementById('chatbot');
