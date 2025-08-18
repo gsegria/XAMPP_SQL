@@ -1,56 +1,43 @@
-function showMessage(text) {
-  document.getElementById('message').textContent = text;
-}
-
-// function openResume() {
-//   showMessage('Button clicked: 打開 Resume');
-//   window.open('resume.php', 'ResumeWindow', 'width=900,height=700');
-// }
-function openResume() {
-    showMessage('Button clicked: 打開 Resume');
-
-    // 取得目前網址的 host
-    const host = window.location.hostname;
-
-    let resumeUrl = '';
-
-    if (host === 'localhost' || host === '127.0.0.1') {
-      // 本地開發環境：開啟 PHP 頁面
-      resumeUrl = 'http://localhost/chatbot/resume.php';
-    } else {
-      // GitHub Pages 等線上環境：開啟靜態 HTML 頁面
-      resumeUrl = 'https://gsegria.github.io/XAMPP_SQL/resume.html';
+// main.js
+// 左側目錄滾動
+document.querySelectorAll('.leftCol button').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const targetId = btn.dataset.target;
+    const el = document.getElementById(targetId);
+    if(el){
+      el.scrollIntoView({behavior:'smooth', block:'start'});
     }
+  });
+});
 
-    window.open(resumeUrl, 'ResumeWindow', 'width=900,height=700');
+// 外部按鈕
+function openResume(){ window.open('resume.html','_blank'); }
+function open104Home(){ window.open('https://www.104.com.tw','_blank'); }
+function openPingHsu104(){ window.open('https://pda.104.com.tw/profile/share/djb5ee77CIyTwJkJtemg443b6j7qkt40','_blank'); }
+function openLinkedIn(){ window.open('https://www.linkedin.com','_blank'); }
+function openLinkedInPingHsu(){ window.open('https://www.linkedin.com/in/your-linkedin','_blank'); }
+function openNotion(){ window.open('https://www.notion.so','_blank'); }
+function openPingbot(){
+  const el = document.getElementById('chatbot');
+  if(el){
+    el.scrollIntoView({behavior:'smooth', block:'start'});
+    document.getElementById('userInput').focus();
   }
-
-function open104Home() {
-  showMessage('Button clicked: 前往 104');
-  window.open('https://www.104.com.tw', '_blank', 'noopener,noreferrer');
 }
 
-function openPingHsu104() {
-  showMessage("Button clicked: 前往 PingHsu's 104");
-  window.open('https://www.104.com.tw/jobbank/...', '_blank', 'noopener,noreferrer');
+function showMessage(msg) {
+  console.log(msg);
+  const chatbox = document.getElementById('chatbox');
+  if(chatbox){
+    const div = document.createElement('div');
+    div.className = 'bot-msg';
+    div.textContent = msg;
+    chatbox.appendChild(div);
+    chatbox.scrollTop = chatbox.scrollHeight;
+  }
 }
 
-function openLinkedIn() {
-  showMessage('Button clicked: 前往 LinkedIn');
-  window.open('https://www.linkedin.com/', '_blank', 'noopener,noreferrer');
-}
-
-function openLinkedInPingHsu() {
-  showMessage("Button clicked: 前往 PingHsu's LinkedIn");
-  window.open('https://www.linkedin.com/in/ping-h-32b485104/', '_blank', 'noopener,noreferrer');
-}
-
-function openNotion() {
-  showMessage('Button clicked: 前往 Notion');
-  window.open('https://www.notion.com/zh-tw/personal', '_blank', 'noopener,noreferrer');
-}
-
-function openPingbot() {
+function openPingbot2() {
   showMessage('Button clicked: 前往 PingBot');
   window.open('http://localhost/chatbot/pingbot.html', '_blank', 'noopener,noreferrer');
 }
