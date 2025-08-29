@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Ping Hsu 的互動履歷</title>
+<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div class="wrap">
+
+<!-- 左側目錄按鈕 -->
+<aside class="leftCol">
+  <button data-target="intro" title="介紹">🏠</button>
+  <button data-target="section1" title="Ping Resume">📄</button>
+  <button data-target="section2" title="外部連結">🔗</button>
+  <button data-target="chatbot" title="PingBot">🤖</button>
+</aside>
+
+<!-- 右側內容 -->
+<main class="rightCol">
+  <section class="introCard" id="intro">
+    <h2>歡迎來到 Ping Hsu 的網站！</h2>
+    <p>今天是美好的一天，願你心情愉快！🌞</p>
+    <div class="button-group-ping">
+      <button class="btn btn-black" onclick="openResume()">打開 Ping's Resume</button>
+    </div>
+  </section>
+
+  <section class="sectionCard" id="section1">
+    <h3>Ping Resume</h3>
+    <p>這裡可以展示你的履歷簡介或下載連結。</p>
+  </section>
+
+  <section class="sectionCard" id="section2">
+    <h3>外部連結</h3>
+    <div class="buttons">
+      <button class="btn btn-gradient" onclick="open104Home()">前往 104</button>
+      <button class="btn btn-red" onclick="openPingHsu104()">前往 PingHsu's 104</button>
+      <button class="btn btn-green" onclick="openLinkedIn()">前往 LinkedIn</button>
+      <button class="btn btn-yellow" onclick="openLinkedInPingHsu()">前往 PingHsu's LinkedIn</button>
+      <button class="btn btn-pink" onclick="openNotion()">前往 Notion</button>
+      <button class="btn btn-purple" onclick="openPingbot2()">前往 PingBot</button>
+      <button class="btn btn-gray" onclick="openPingLocalGame()">前往 Ping local網頁遊戲</button>
+      <button class="btn btn-gray" onclick="openPingGitGame()">前往 Ping Git網頁遊戲</button>
+    </div>
+  </section>
+
+  <section class="sectionCard" id="chatbot">
+    <h3>🤖 與 PingBot 聊聊 (未授權)</h3>
+    <div id="chatbox"></div>
+    <div class="chatControls">
+      <input type="text" id="userInput" placeholder="輸入你的問題..." />
+      <button class="btn btn-black" onclick="sendMessage()">送出</button>
+      <button class="btn btn-gray" onclick="clearChat()">清除</button>
+    </div>
+  </section>
+</main>
+</div>
+
+<!-- 使用原本的 JS 檔案 -->
+<script src="js/main.js"></script>
+<script src="js/chatbot.js"></script>
+</body>
+</html>
