@@ -38,8 +38,18 @@ function showMessage(msg) {
 }
 
 function openPingbot2() {
-  showMessage('Button clicked: 前往 PingBot');
-  window.open('http://localhost/chatbot/pingbot.html', '_blank', 'noopener,noreferrer');
+  const localhostURL = 'http://localhost/chatbot/pingbot.html'; // 你的本地開發網址
+  const fallbackURL = 'https://gsegria.github.io/XAMPP_SQL/pingbot.html'; // 替換成實際 GitHub Page URL
+
+  fetch(localhostURL, { method: 'HEAD', mode: 'no-cors' })
+    .then(() => {
+      console.log('成功連接 localhost，開啟本地頁面');
+      window.open(localhostURL, '_blank', 'noopener,noreferrer');
+    })
+    .catch(() => {
+      console.warn('無法連接 localhost，開啟 GitHub 備用頁面');
+      window.open(fallbackURL, '_blank', 'noopener,noreferrer');
+    });
 }
 
 function openPingLocalGame() {

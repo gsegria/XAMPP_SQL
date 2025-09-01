@@ -32,6 +32,11 @@ function openPingbot() {
   window.open('http://localhost/chatbot/pingbot.html', '_blank', 'noopener,noreferrer');
 }
 
+function openPingbot_git() {
+  showMessage('Button clicked: 前往 PingBot');
+  window.open('https://gsegria.github.io/XAMPP_SQL/pingbot.html', '_blank', 'noopener,noreferrer');
+}
+
 function sendMessage() {
   const inputElem = document.getElementById('userInput');
   const input = inputElem.value.trim();
