@@ -20,5 +20,7 @@ env/
 ENV/
 
 #忽略
+*.log
+*.tmp
 *.bak
 pp.bat
