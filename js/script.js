@@ -28,38 +28,45 @@ function openNotion() {
 }
 
 function openPingbot() {
-  showMessage('Button clicked: 前往 PingBot');
-  window.open('http://localhost/chatbot/pingbot.html', '_blank', 'noopener,noreferrer');
-}
+  const localhostURL = 'http://localhost/chatbot/pingbot.html'; // 你的本地開發網址
+  const fallbackURL = 'https://gsegria.github.io/XAMPP_SQL/pingbot.html'; // 替換成實際 GitHub Page URL
 
-function openPingbot_git() {
-  showMessage('Button clicked: 前往 PingBot');
-  window.open('https://gsegria.github.io/XAMPP_SQL/pingbot.html', '_blank', 'noopener,noreferrer');
+  fetch(localhostURL, { method: 'HEAD', mode: 'no-cors' })
+    .then(() => {
+      console.log('成功連接 localhost，開啟本地頁面');
+      window.open(localhostURL, '_blank', 'noopener,noreferrer');
+    })
+    .catch(() => {
+      console.warn('無法連接 localhost，開啟 GitHub 備用頁面');
+      window.open(fallbackURL, '_blank', 'noopener,noreferrer');
+    });
 }
 
 function sendMessage() {
-  const inputElem = document.getElementById('userInput');
-  const input = inputElem.value.trim();
-  if (!input) return;  // 空白不送出
+  const userInput = document.getElementById("userInput").value.trim();
+  const model = document.getElementById("model").value;
+  if (userInput === "") return;
 
-  const chatbox = document.getElementById('chatbox');
-  chatbox.innerHTML += `<div class="user-msg">👤 ${input}</div>`;
-
-  fetch('chatbot.php', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `message=${encodeURIComponent(input)}`
+  fetch("pingbot.php", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    body: `message=${encodeURIComponent(userInput)}&model=${model}`
   })
-  .then(res => res.json())
-  .then(data => {
-    chatbox.innerHTML += `<div class="bot-msg">🤖 ${data.reply}</div>`;
-    inputElem.value = '';  // 清空輸入框
-    chatbox.scrollTop = chatbox.scrollHeight;  // 自動滾動到底部
-  })
-  .catch(err => {
-    chatbox.innerHTML += `<div class="bot-msg error">❌ 發生錯誤：${err}</div>`;
-  });
+    .then((response) => response.json())
+    .then((data) => {
+      const reply = data.reply || "⚠️ 系統無回應";
+      document.getElementById("chatbox").innerHTML += `<div><strong>你：</strong>${userInput}</div>`;
+      document.getElementById("chatbox").innerHTML += `<div><strong>PingBot：</strong>${reply}</div>`;
+      document.getElementById("userInput").value = "";
+    })
+    .catch((error) => {
+      console.error("錯誤:", error);
+      alert("連接失敗，請確認伺服器與金鑰狀態");
+    });
 }
+
 
 // 監聽輸入框，按下 Enter 鍵呼叫 sendMessage()
 document.addEventListener('DOMContentLoaded', () => {
