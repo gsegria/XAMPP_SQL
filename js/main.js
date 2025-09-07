@@ -39,7 +39,8 @@ function showMessage(msg) {
 }
 
 function openPingbot2() {
-  const localhostURL = 'http://localhost/chatbot/pingbot.html'; // 你的本地開發網址
+  //const localhostURL = 'http://localhost/chatbot/pingbot.html'; // 你的本地開發網址
+  const localhostURL = 'https://gsegria.github.io/XAMPP_SQL/pingbot.html'; // 你的本地開發網址
   const fallbackURL = 'https://gsegria.github.io/XAMPP_SQL/pingbot.html'; // 替換成實際 GitHub Page URL
 
   fetch(localhostURL, { method: 'HEAD', mode: 'no-cors' })
