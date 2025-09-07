@@ -42,19 +42,24 @@ function openPingbot2() {
   const localhostURL = 'http://localhost/chatbot/pingbot.html';
   const fallbackURL = 'https://gsegria.github.io/XAMPP_SQL/pingbot.html';
 
-  const img = new Image();
-  img.onload = function () {
+  const testImg = new Image();
+
+  testImg.onload = function () {
+    // 如果本機回應了圖片，就當作 localhost 有啟動
     console.log('成功連接 localhost，開啟本地頁面');
     window.open(localhostURL, '_blank', 'noopener,noreferrer');
   };
-  img.onerror = function () {
+
+  testImg.onerror = function () {
+    // 無法載入圖片，代表 localhost 沒開
     console.warn('無法連接 localhost，開啟 GitHub 備用頁面');
     window.open(fallbackURL, '_blank', 'noopener,noreferrer');
   };
 
-  // 加載本地圖片資源，用於測試是否連得上 localhost
-  img.src = 'http://localhost/favicon.ico?' + new Date().getTime(); // 加 time 防快取
+  // 嘗試載入 localhost 的圖示資源作為連線測試
+  testImg.src = 'http://localhost/favicon.ico?' + new Date().getTime();
 }
+
 
 
 function openPingLocalGame() {
