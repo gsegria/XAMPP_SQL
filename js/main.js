@@ -39,20 +39,23 @@ function showMessage(msg) {
 }
 
 function openPingbot2() {
-  //const localhostURL = 'http://localhost/chatbot/pingbot.html'; // 你的本地開發網址
-  const localhostURL = 'https://gsegria.github.io/XAMPP_SQL/pingbot.html'; // 你的本地開發網址
-  const fallbackURL = 'https://gsegria.github.io/XAMPP_SQL/pingbot.html'; // 替換成實際 GitHub Page URL
+  const localhostURL = 'http://localhost/chatbot/pingbot.html';
+  const fallbackURL = 'https://gsegria.github.io/XAMPP_SQL/pingbot.html';
 
-  fetch(localhostURL, { method: 'HEAD', mode: 'no-cors' })
-    .then(() => {
-      console.warn('無法連接 localhost，開啟 GitHub 備用頁面');
-      window.open(fallbackURL, '_blank', 'noopener,noreferrer');
-    })
-    .catch(() => {
-      console.log('成功連接 localhost，開啟本地頁面');
-      window.open(localhostURL, '_blank', 'noopener,noreferrer');
-    });
+  const img = new Image();
+  img.onload = function () {
+    console.log('成功連接 localhost，開啟本地頁面');
+    window.open(localhostURL, '_blank', 'noopener,noreferrer');
+  };
+  img.onerror = function () {
+    console.warn('無法連接 localhost，開啟 GitHub 備用頁面');
+    window.open(fallbackURL, '_blank', 'noopener,noreferrer');
+  };
+
+  // 加載本地圖片資源，用於測試是否連得上 localhost
+  img.src = 'http://localhost/favicon.ico?' + new Date().getTime(); // 加 time 防快取
 }
+
 
 function openPingLocalGame() {
   showMessage('Button clicked: 前往 Ping local game');
