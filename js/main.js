@@ -54,6 +54,7 @@ function loadSection(id, url) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  loadSection("section-python", "https://gsegria.github.io/XAMPP_SQL/sections/01_python.html");
   loadSection("section-xmapp", "https://gsegria.github.io/XAMPP_SQL/sections/02_xmapp.html");
   loadSection("section-medicine", "https://gsegria.github.io/XAMPP_SQL/sections/03_medicine.html");
   loadSection("section-npm", "https://gsegria.github.io/XAMPP_SQL/sections/04_npm.html");
