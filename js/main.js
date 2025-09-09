@@ -38,21 +38,6 @@ function showMessage(msg) {
   }
 }
 
-// function loadCertificateSection() {
-//   fetch('https://gsegria.github.io/XAMPP_SQL/07_certificate.html')
-//     .then(response => response.text())
-//     .then(data => {
-//       document.getElementById('certificate-section').innerHTML = data;
-//     })
-//     .catch(error => {
-//       console.error('載入證書失敗：', error);
-//     });
-// }
-
-// // 當頁面載入完畢後執行
-// document.addEventListener("DOMContentLoaded", loadCertificateSection);
-
-
 function loadSection(id, url) {
   fetch(url)
     .then(res => {
@@ -69,11 +54,12 @@ function loadSection(id, url) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  loadSection("section-medicine", "https://gsegria.github.io/XAMPP_SQL/03_medicine.html");
-  loadSection("section-npm", "https://gsegria.github.io/XAMPP_SQL/04_npm.html");
-  loadSection("section-stm32", "https://gsegria.github.io/XAMPP_SQL/05_STM32_IDE.html");
-  loadSection("section-dart", "https://gsegria.github.io/XAMPP_SQL/06_dart.html");
-  loadSection("certificate-section", "https://gsegria.github.io/XAMPP_SQL/07_certificate.html");
+  loadSection("section-xmapp", "https://gsegria.github.io/XAMPP_SQL/sections/02_xmapp.html");
+  loadSection("section-medicine", "https://gsegria.github.io/XAMPP_SQL/sections/03_medicine.html");
+  loadSection("section-npm", "https://gsegria.github.io/XAMPP_SQL/sections/04_npm.html");
+  loadSection("section-stm32", "https://gsegria.github.io/XAMPP_SQL/sections/05_STM32_IDE.html");
+  loadSection("section-dart", "https://gsegria.github.io/XAMPP_SQL/sections/06_dark.html");
+  loadSection("section-certificate", "https://gsegria.github.io/XAMPP_SQL/sections/07_certificate.html");
 });
 
 
