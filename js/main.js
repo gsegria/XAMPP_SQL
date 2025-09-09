@@ -38,6 +38,46 @@ function showMessage(msg) {
   }
 }
 
+// function loadCertificateSection() {
+//   fetch('https://gsegria.github.io/XAMPP_SQL/07_certificate.html')
+//     .then(response => response.text())
+//     .then(data => {
+//       document.getElementById('certificate-section').innerHTML = data;
+//     })
+//     .catch(error => {
+//       console.error('載入證書失敗：', error);
+//     });
+// }
+
+// // 當頁面載入完畢後執行
+// document.addEventListener("DOMContentLoaded", loadCertificateSection);
+
+
+function loadSection(id, url) {
+  fetch(url)
+    .then(res => {
+      if (!res.ok) throw new Error(`無法載入 ${url}`);
+      return res.text();
+    })
+    .then(data => {
+      document.getElementById(id).innerHTML = data;
+    })
+    .catch(err => {
+      console.error(err);
+      document.getElementById(id).innerHTML = '載入失敗';
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadSection("section-medicine", "https://gsegria.github.io/XAMPP_SQL/03_medicine.html");
+  loadSection("section-npm", "https://gsegria.github.io/XAMPP_SQL/04_npm.html");
+  loadSection("section-stm32", "https://gsegria.github.io/XAMPP_SQL/05_STM32_IDE.html");
+  loadSection("section-dart", "https://gsegria.github.io/XAMPP_SQL/06_dart.html");
+  loadSection("certificate-section", "https://gsegria.github.io/XAMPP_SQL/07_certificate.html");
+});
+
+
+
 function openPingbot2() {
   const localhostURL = 'http://localhost/chatbot/pingbot.html';
   const fallbackURL = 'https://gsegria.github.io/XAMPP_SQL/pingbot.html';
