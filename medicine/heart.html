@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<title>心跳模擬器</title>
+<style>
+body { font-family: Arial; margin: 20px; }
+.container { display: flex; gap: 20px; }
+
+/* 左邊區塊 */
+.left { flex: 2; } /* 左邊變大 */
+.right { flex: 1; max-height: 500px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; }
+
+button { padding: 8px 16px; font-size: 16px; margin: 5px; }
+#bpm { font-size: 24px; color: red; }
+canvas { border: 1px solid #ccc; margin-top: 10px; width: 100%; }
+table { border-collapse: collapse; width: 100%; margin-top: 10px; }
+th, td { border: 1px solid #ccc; padding: 4px; text-align: center; }
+th { background-color: #f2f2f2; }
+</style>
+</head>
+<body>
+
+<h1>心跳模擬器 + BPM 歷史資料</h1>
+
+<div class="container">
+    <!-- 左邊：心跳控制 + 圖表 -->
+    <div class="left">
+        <p>
+            狀態：
+            <button onclick="setState('rest')">平時</button>
+            <button onclick="setState('exercise')">運動</button>
+            <button onclick="resetData()">🔄 重置</button>
+        </p>
+        <p>目前心率 (BPM): <span id="bpm">0</span></p>
+        <canvas id="bpmChart" width="600" height="400"></canvas>
+    </div>
+
+    <!-- 右邊：BPM 歷史資料 -->
+    <div class="right">
+        <h3>BPM 歷史資料 (bpmHistory)</h3>
+        <table id="bpmTable">
+            <tr><th>#</th><th>時間 (ms)</th><th>BPM</th></tr>
+        </table>
+    </div>
+</div>
+
+<script>
+let bpmHistory = [];
+let state = 'rest';
+const bpmSpan = document.getElementById("bpm");
+const canvas = document.getElementById("bpmChart");
+const ctx = canvas.getContext("2d");
+
+// 狀態切換
+function setState(s) {
+    state = s;
+}
+
+// 生成心跳資料
+function generateHeartbeat() {
+    const now = Date.now();
+
+    // 根據狀態生成 BPM
+    let bpm;
+    if(state==='rest') bpm = Math.floor(Math.random() * (80-55+1)) + 55;
+    else bpm = Math.floor(Math.random() * (150-90+1)) + 90;
+
+    bpmHistory.push({time: now, bpm: bpm});
+
+    // 保留最近50個點
+    if(bpmHistory.length>50) bpmHistory.shift();
+
+    bpmSpan.textContent = bpm;
+
+    updateTable();
+    drawChart();
+}
+
+// 重置
+function resetData() {
+    bpmHistory = [];
+    bpmSpan.textContent = 0;
+    updateTable();
+    drawChart();
+}
+
+// 更新右邊表格
+function updateTable() {
+    const bpmTable = document.getElementById("bpmTable");
+    bpmTable.innerHTML = "<tr><th>#</th><th>時間 (ms)</th><th>BPM</th></tr>";
+    bpmHistory.forEach((entry,i)=>{
+        const row = bpmTable.insertRow();
+        row.insertCell(0).textContent = i+1;
+        row.insertCell(1).textContent = entry.time;
+        row.insertCell(2).textContent = entry.bpm;
+    });
+
+    // 自動滾到最後
+    bpmTable.parentElement.scrollTop = bpmTable.parentElement.scrollHeight;
+}
+
+// 畫折線圖
+function drawChart() {
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    if(bpmHistory.length===0) return;
+
+    const maxBPM = Math.max(...bpmHistory.map(e=>e.bpm))+10;
+    const minBPM = Math.min(...bpmHistory.map(e=>e.bpm))-10;
+    const padding = 30;
+    const width = canvas.width - 2*padding;
+    const height = canvas.height - 2*padding;
+    const stepX = width / (bpmHistory.length-1 || 1);
+
+    ctx.beginPath();
+    ctx.strokeStyle = "red";
+    ctx.lineWidth = 2;
+    bpmHistory.forEach((e,i)=>{
+        const x = padding + i*stepX;
+        const y = padding + height - (e.bpm - minBPM)/(maxBPM-minBPM)*height;
+        if(i===0) ctx.moveTo(x,y);
+        else ctx.lineTo(x,y);
+    });
+    ctx.stroke();
+
+    // X軸
+    ctx.strokeStyle = "#000";
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(padding, canvas.height-padding);
+    ctx.lineTo(canvas.width-padding, canvas.height-padding);
+    ctx.stroke();
+
+    // Y軸標籤
+    ctx.fillStyle = "#000";
+    ctx.font = "14px Arial";
+    ctx.fillText(maxBPM, 5, padding+5);
+    ctx.fillText(minBPM, 5, canvas.height-padding);
+}
+
+// 每秒生成心跳
+setInterval(generateHeartbeat, 1000);
+</script>
+
+</body>
+</html>
