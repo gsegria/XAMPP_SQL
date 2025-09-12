@@ -12,7 +12,7 @@ document.querySelectorAll('.leftCol button').forEach(btn=>{
 
 // 外部按鈕
 function openResume(){ window.open('resume.html','_blank'); }
-function open_master_thesis(){ window.open('https://ndltd.ncl.edu.tw/cgi-bin/gs32/gsweb.cgi/ccd=q37ACz/search?s=id=%22105MHIT1428007%22.&openfull=1&setcurrent=1#XXX.html','_blank'); }
+function open_master_thesis(){ window.open('https://ndltd.ncl.edu.tw/cgi-bin/gs32/gsweb.cgi?o=dnclcdr&s=id=%22105MHIT1428007%22.&searchmode=basic','_blank'); }
 function open104Home(){ window.open('https://www.104.com.tw','_blank'); }
 function openPingHsu104(){ window.open('https://pda.104.com.tw/profile/share/eVxtgFxQ1XlSmvuJ524o7WkasUpfqozW','_blank'); }
 function openLinkedIn(){ window.open('https://www.linkedin.com','_blank'); }
