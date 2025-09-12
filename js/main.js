@@ -53,17 +53,6 @@ function loadSection(id, url) {
     });
 }
 
-// document.addEventListener("DOMContentLoaded", () => {
-//   loadSection("section-python", "https://gsegria.github.io/XAMPP_SQL/sections/01_python.html");
-//   loadSection("section-xmapp", "https://gsegria.github.io/XAMPP_SQL/sections/02_xmapp.html");
-//   loadSection("section-medicine", "https://gsegria.github.io/XAMPP_SQL/sections/03_medicine.html");
-//   loadSection("section-npm", "https://gsegria.github.io/XAMPP_SQL/sections/04_npm.html");
-//   loadSection("section-stm32", "https://gsegria.github.io/XAMPP_SQL/sections/05_STM32_IDE.html");
-//   loadSection("section-dart", "https://gsegria.github.io/XAMPP_SQL/sections/06_dark.html");
-//   loadSection("section-certificate", "https://gsegria.github.io/XAMPP_SQL/sections/07_certificate.html");
-// });
-
-
 document.addEventListener("DOMContentLoaded", () => {
   // 判斷是否在 localhost
   const isLocal = window.location.hostname === "localhost";
