@@ -16,7 +16,7 @@ function open_master_thesis(){ window.open('https://ndltd.ncl.edu.tw/cgi-bin/gs3
 function openSelfIntroduce(){ window.open('https://www.notion.so/100-26205a5cf43080f0bb51e3ac0bf236b2?source=copy_link','_blank'); }
 
 function open104Home(){ window.open('https://www.104.com.tw','_blank'); }
-function openPingHsu104(){ window.open('https://pda.104.com.tw/profile/share/eVxtgFxQ1XlSmvuJ524o7WkasUpfqozW','_blank'); }
+function openPingHsu104(){ window.open('https://pda.104.com.tw/profile/share/i9p7o9aqK0Id36O7LxI43bJF2DM8ti4b','_blank'); }
 function openLinkedIn(){ window.open('https://www.linkedin.com','_blank'); }
 function openLinkedInPingHsu(){ window.open('https://www.linkedin.com/in/ping-h-32b485104/','_blank'); }
 function openNotion(){ window.open('https://www.notion.so','_blank'); }
