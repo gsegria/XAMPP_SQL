@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Ping Hsu 的互動履歷</title>
+<title>Ping Hsu 的互動履歷 (Interactive Resume)</title>
 <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
@@ -11,104 +11,97 @@
 
 <!-- 左側目錄按鈕 -->
 <aside class="leftCol">
-  <button data-target="intro" title="介紹">🏠</button>
-  <button data-target="section1" title="Ping Resume">📄</button>
-  <button data-target="section2" title="外部連結">🔗</button>
-  <button data-target="chatbot" title="PingBot">🤖</button>
+  <button data-target="intro" title="介紹 Introduction">🏠</button>
+  <button data-target="section1" title="履歷 Resume">📄</button>
+  <button data-target="section2" title="外部連結 External Links">🔗</button>
+  <button data-target="chatbot" title="PingBot 聊天機器人">🤖</button>
 </aside>
 
 <!-- 右側內容 -->
 <main class="rightCol">
   <section class="introCard" id="intro">
-    <h2>歡迎來到 Ping Hsu 的網站！</h2>
-    <p>今天是美好的一天，願你心情愉快！🌞</p>
+    <h2>歡迎來到 Ping Hsu 的網站！(Welcome to Ping Hsu's Website!)</h2>
+    <p>今天是美好的一天，願你心情愉快！🌞 (Have a wonderful day!)</p>
     <div class="button-group-ping">
-      <button class="btn btn-black" onclick="openResume()">打開 Ping's Resume</button>
-      <button class="btn btn-gradient" onclick="open_master_thesis()">打開 Ping's 論文(遠端照護系統之開發)</button>
-
-      <button class="btn btn-orange" onclick="openSelfIntroduce()">打開 Ping's 簡介</button>
-
-
+      <button class="btn btn-black" onclick="openResume()">打開履歷 (Open Resume)</button>
+      <button class="btn btn-gradient" onclick="open_master_thesis()">打開論文 (Open Master's Thesis - Remote Healthcare System)</button>
+      <button class="btn btn-orange" onclick="openSelfIntroduce()">打開自我介紹 (Open Self Introduction)</button>
+    </div>
   </section>
-  
-
 
   <section class="sectionCard" id="section1">
-    <h3>Ping's 作品介紹</h3>
-    <p>Python、xmapp、javascript、html、C/C++等</p>
+    <h3>作品介紹 (Projects Overview)</h3>
+    <p>Python、XAMPP、JavaScript、HTML、C/C++ 等技術 (Technologies)</p>
   </section>
      
     <!-- 第1區塊： python 專案 -->
     <section class="sectionCard" id="python">
-      <h4>python 專案</h4>
-      <div id="section-python">載入中...</div>
+      <h4>Python 專案 (Python Projects)</h4>
+      <div id="section-python">載入中... (Loading...)</div>
     </section>
 
     <!-- 第2區塊： XMAPP 專案 -->
     <section class="sectionCard" id="xmapp">
-      <h4>XMAPP 專案 (html, php, js...)</h4>
-      <div id="section-xmapp">載入中...</div>
+      <h4>XAMPP 專案 (Web Projects: HTML / PHP / JS)</h4>
+      <div id="section-xmapp">載入中... (Loading...)</div>
     </section>
 
     <!-- 第3區塊：medicine 專案 -->
     <section class="sectionCard" id="medicine">
-      <h4>medicine + db 專案</h4>
-      <div id="section-medicine">載入中...</div>
+      <h4>醫療資料庫專案 (Medical + Database Projects)</h4>
+      <div id="section-medicine">載入中... (Loading...)</div>
     </section>
 
     <!-- 第4區塊：npm 專案 -->
     <section class="sectionCard" id="npm">
-      <h4>npm 專案(nodejs)</h4>
-      <div id="section-npm">載入中...</div>
+      <h4>Node.js 專案 (NPM / Node.js Projects)</h4>
+      <div id="section-npm">載入中... (Loading...)</div>
     </section>
 
     <!-- 第5區塊：STM32 IDE 專案 -->
     <section class="sectionCard" id="stm32">
-      <h4>STM32 IDE 專案</h4>
-      <div id="section-stm32">載入中...</div>
+      <h4>STM32 韌體專案 (STM32 Firmware Projects)</h4>
+      <div id="section-stm32">載入中... (Loading...)</div>
     </section>
 
     <!-- 第6區塊：dart 專案 -->
     <section class="sectionCard" id="dart">
-      <h4>dart 專案</h4>
-      <div id="section-dart">載入中...</div>
+      <h4>Dart / Flutter 專案 (Dart Projects)</h4>
+      <div id="section-dart">載入中... (Loading...)</div>
     </section>
 
-
-    <!-- ✅ 第7區塊：Certificate 作品 - 改為動態載入 -->
+    <!-- 第7區塊：Certificate -->
     <section class="sectionCard" id="certificates">
-      <h4>課程證書 </h4>
-      <div id="section-certificate">載入中...</div>
+      <h4>課程證書 (Certificates)</h4>
+      <div id="section-certificate">載入中... (Loading...)</div>
     </section>
-
 
   <section class="sectionCard" id="section2">
-    <h3>外部連結</h3>
+    <h3>外部連結 (External Links)</h3>
     <div class="buttons">
-      <button class="btn btn-gradient" onclick="open104Home()">前往 104</button>
-      <button class="btn btn-red" onclick="openPingHsu104()">前往 PingHsu's 104</button>
+      <button class="btn btn-gradient" onclick="open104Home()">前往 104 (Go to 104 Job Bank)</button>
+      <button class="btn btn-red" onclick="openPingHsu104()">前往個人 104 (My 104 Profile)</button>
       <button class="btn btn-green" onclick="openLinkedIn()">前往 LinkedIn</button>
-      <button class="btn btn-yellow" onclick="openLinkedInPingHsu()">前往 PingHsu's LinkedIn</button>
+      <button class="btn btn-yellow" onclick="openLinkedInPingHsu()">前往個人 LinkedIn (My LinkedIn)</button>
       <button class="btn btn-pink" onclick="openNotion()">前往 Notion</button>
       <button class="btn btn-purple" onclick="openPingbot2()">前往 PingBot</button>
-      <button class="btn btn-gray" onclick="openPingLocalGame()">前往 Ping local網頁遊戲</button>
-      <button class="btn btn-gray" onclick="openPingGitGame()">前往 Ping Git網頁遊戲</button>
+      <button class="btn btn-gray" onclick="openPingLocalGame()">前往本地網頁遊戲 (Local Web Game)</button>
+      <button class="btn btn-gray" onclick="openPingGitGame()">前往 Git 網頁遊戲 (Git Web Game)</button>
     </div>
   </section>
 
   <section class="sectionCard" id="chatbot">
-    <h3>🤖 與 PingBot 聊聊 (未授權)</h3>
+    <h3>🤖 與 PingBot 聊聊 (Chat with PingBot - Unauthorized)</h3>
     <div id="chatbox"></div>
     <div class="chatControls">
-      <input type="text" id="userInput" placeholder="輸入你的問題..." />
-      <button class="btn btn-black" onclick="sendMessage()">送出</button>
-      <button class="btn btn-gray" onclick="clearChat()">清除</button>
+      <input type="text" id="userInput" placeholder="輸入你的問題... (Enter your question...)" />
+      <button class="btn btn-black" onclick="sendMessage()">送出 (Send)</button>
+      <button class="btn btn-gray" onclick="clearChat()">清除 (Clear)</button>
     </div>
   </section>
 </main>
 </div>
 
-<!-- 使用原本的 JS 檔案 -->
 <script src="js/main.js"></script>
 <script src="js/chatbot.js"></script>
 </body>
