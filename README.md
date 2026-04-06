@@ -9,6 +9,7 @@ XAMPP_SQL/
 │
 ├─ css/
 │   └─ style.css            # 全域樣式 CSS，index.html 和 sections 都會引用
+│   └─ style_bot.css        # 全域樣式 bot.html 會引用
 │
 ├─ js/
 │   ├─ chatbot.js           # 聊天機器人功能 JS
