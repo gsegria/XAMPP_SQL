@@ -53,19 +53,19 @@ body {
    只作用於 class="denoise-table" 的 table 內 <img>
    =================================================== */
 
-/* 調整圖片寬度，高度自動等比例縮放 */
-.denoise-table img {
-  width: 100px;        /* 圖片寬度，可調整，例如 10px, 100px, 180px */
-  height: auto;        /* 高度自動，不變形 */
-  
-  display: block;      /* 讓 margin:auto 可置中 */
-  margin: auto;        /* 置中圖片在 td 內 */
-  
-  /* 可選額外參數 */
-  max-width: 100%;     /* 避免表格太小時被撐破 */
-  border-radius: 4px;  /* 圖片圓角，可刪除 */
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.521); /* 可加陰影效果 */
+/* 調整圖片跟視頻寬度，高度自動等比例縮放 */
+.denoise-table img,
+.denoise-table video {
+  width: 180px;
+  height: auto;
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  border-radius: 4px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.521);
 }
+
+
 
 /* ---------- 按鈕樣式 ---------- */
 .btn {
