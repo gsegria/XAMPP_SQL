@@ -55,7 +55,7 @@ body {
 
 /* 調整圖片寬度，高度自動等比例縮放 */
 .denoise-table img {
-  width: 180px;        /* 圖片寬度，可調整，例如 10px, 100px, 180px */
+  width: 100px;        /* 圖片寬度，可調整，例如 10px, 100px, 180px */
   height: auto;        /* 高度自動，不變形 */
   
   display: block;      /* 讓 margin:auto 可置中 */
