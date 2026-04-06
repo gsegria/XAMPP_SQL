@@ -10,7 +10,6 @@ document.querySelectorAll('.leftCol button').forEach(btn=>{
   });
 });
 
-// 外部按鈕
 function openResume(){ window.open('resume.html','_blank'); }
 function open_master_thesis(){ window.open('https://ndltd.ncl.edu.tw/cgi-bin/gs32/gsweb.cgi?o=dnclcdr&s=id=%22105MHIT1428007%22.&searchmode=basic','_blank'); }
 function openSelfIntroduce(){ window.open('https://www.notion.so/99-Resume-English-33105a5cf4308002ad8ece8c5b070f32?source=copy_link','_blank'); }
@@ -48,11 +47,38 @@ function loadSection(id, url) {
     })
     .then(data => {
       document.getElementById(id).innerHTML = data;
+
+
+      // ✅ 只對 Python section 做打印
+      if (id === 'section-python') {
+        const imgs = document.querySelectorAll('.denoise-table img');
+        imgs.forEach(img => {
+          if (img.complete) {
+            printStyle(img);
+          } else {
+            img.addEventListener('load', () => printStyle(img));
+          }
+        });
+      }
+
+
+
     })
+
     .catch(err => {
       console.error(err);
       document.getElementById(id).innerHTML = '載入失敗';
     });
+}
+
+// 工具函數
+function printStyle(img) {
+  const style = window.getComputedStyle(img);
+  console.log(`Image src: ${img.src}`);
+  console.log('Width:', style.width);
+  console.log('Height:', style.height);
+  console.log('Margin:', style.margin);
+  console.log('Border radius:', style.borderRadius);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -96,7 +122,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-
 function openPingbot2() {
   const localhostURL = 'http://localhost/chatbot/pingbot.html';
   const fallbackURL = 'https://gsegria.github.io/XAMPP_SQL/pingbot.html';
@@ -130,3 +155,7 @@ function openPingGitGame() {
   showMessage('Button clicked: 前往 Ping Git game');
   window.open('https://gsegria.github.io/XAMPP_SQL/keyboard_game/index.html', '_blank', 'noopener,noreferrer');
 }
+
+
+
+// 外部按鈕
