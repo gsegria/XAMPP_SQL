@@ -91,6 +91,17 @@ body {
   transition: 0.15s;
 }
 
+/* ⭐⭐⭐ 這裡是你要新增的（圖片放大關鍵） */
+.nice-table img {
+  width: 320px;     /* ← 改這個控制大小（180 → 320） */
+  height: auto;
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
 
 /* ---------- 按鈕樣式 ---------- */
 .btn {
