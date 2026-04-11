@@ -33,7 +33,8 @@ XAMPP_SQL/
 │   ├─ 04_npm.html           # npm 專案內容
 │   ├─ 05_STM32_IDE.html     # STM32 IDE 專案內容
 │   ├─ 06_dark.html          # Dark 主題專案內容
-│   └─ 07_certificate.html   # 證書展示區塊
+│   └─ 07_rock5b_plus.html        # Rock 5B+ 專案
+│   └─ 08_certificate.html   # 證書展示區塊
 │
 ├─ uploads/                 # 上傳的圖片檔案
 │   ├─ xxx.jpg

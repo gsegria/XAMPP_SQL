@@ -111,9 +111,13 @@ document.addEventListener("DOMContentLoaded", () => {
       ? "http://localhost/chatbot/sections/06_dark.html"
       : "https://gsegria.github.io/XAMPP_SQL/sections/06_dark.html",
 
+    "section-rock_5b_plus": isLocal
+      ? "http://localhost/chatbot/sections/07_rock5b_plus.html"
+      : "https://gsegria.github.io/XAMPP_SQL/sections/07_rock5b_plus.html",
+
     "section-certificate": isLocal
-      ? "http://localhost/chatbot/sections/07_certificate.html"
-      : "https://gsegria.github.io/XAMPP_SQL/sections/07_certificate.html"
+      ? "http://localhost/chatbot/sections/08_certificate.html"
+      : "https://gsegria.github.io/XAMPP_SQL/sections/08_certificate.html"
   };
 
   // 自動載入所有 section
