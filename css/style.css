@@ -37,7 +37,10 @@ body {
 }
 
 .rightCol{
-  display:flex; flex-direction:column; gap:18px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
 }
 
 /* ---------- 區塊樣式 ---------- */

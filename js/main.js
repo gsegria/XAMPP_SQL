@@ -50,6 +50,7 @@ function loadSection(id, url) {
       if (!container) return;
 
       container.innerHTML = data;
+      container.offsetHeight;
 
       // ✅ ⭐ 新增：只對 dart / rock5b_plus 套 table style
       if (id === 'section-dart' || id === 'section-rock_5b_plus') {
