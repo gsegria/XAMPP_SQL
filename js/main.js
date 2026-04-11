@@ -46,10 +46,21 @@ function loadSection(id, url) {
       return res.text();
     })
     .then(data => {
-      document.getElementById(id).innerHTML = data;
+      const container = document.getElementById(id);
+      if (!container) return;
 
+      container.innerHTML = data;
 
-      // ✅ 只對 Python section 做打印
+      // ✅ ⭐ 新增：只對 dart / rock5b_plus 套 table style
+      if (id === 'section-dart' || id === 'section-rock_5b_plus') {
+        const tables = container.querySelectorAll('table');
+
+        tables.forEach(table => {
+          table.classList.add('nice-table');
+        });
+      }
+
+      // ✅ Python 圖片 debug（保留）
       if (id === 'section-python') {
         const imgs = document.querySelectorAll('.denoise-table img');
         imgs.forEach(img => {
@@ -60,14 +71,11 @@ function loadSection(id, url) {
           }
         });
       }
-
-
-
     })
-
     .catch(err => {
       console.error(err);
-      document.getElementById(id).innerHTML = '載入失敗';
+      const el = document.getElementById(id);
+      if (el) el.innerHTML = '載入失敗';
     });
 }
 
