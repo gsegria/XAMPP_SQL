@@ -100,9 +100,9 @@ document.addEventListener("DOMContentLoaded", () => {
       ? "http://localhost/chatbot/sections/01_python.html"
       : "https://gsegria.github.io/XAMPP_SQL/sections/01_python.html",
 
-    "section-xmapp": isLocal
-      ? "http://localhost/chatbot/sections/02_xmapp.html"
-      : "https://gsegria.github.io/XAMPP_SQL/sections/02_xmapp.html",
+    "section-rock_5b_plus": isLocal
+      ? "http://localhost/chatbot/sections/02_rock5b_plus.html"
+      : "https://gsegria.github.io/XAMPP_SQL/sections/02_rock5b_plus.html",
 
     "section-medicine": isLocal
       ? "http://localhost/chatbot/sections/03_medicine.html"
@@ -120,9 +120,9 @@ document.addEventListener("DOMContentLoaded", () => {
       ? "http://localhost/chatbot/sections/06_dark.html"
       : "https://gsegria.github.io/XAMPP_SQL/sections/06_dark.html",
 
-    "section-rock_5b_plus": isLocal
-      ? "http://localhost/chatbot/sections/07_rock5b_plus.html"
-      : "https://gsegria.github.io/XAMPP_SQL/sections/07_rock5b_plus.html",
+    "section-xmapp": isLocal
+      ? "http://localhost/chatbot/sections/07_xmapp.html"
+      : "https://gsegria.github.io/XAMPP_SQL/sections/07_xmapp.html",
 
     "section-certificate": isLocal
       ? "http://localhost/chatbot/sections/08_certificate.html"

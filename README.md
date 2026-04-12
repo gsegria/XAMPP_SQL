@@ -28,12 +28,12 @@ XAMPP_SQL/
 │
 ├─ sections/                # 各區塊內容 HTML (用 fetch 載入到 index.html)
 │   ├─ 01_python.html       # Python 專案內容
-│   ├─ 02_xmapp.html        # XAMPP 專案內容
+│   └─ 02_rock5b_plus.html        # Rock 5B+ 專案
 │   ├─ 03_medicine.html     # 醫療專案內容
 │   ├─ 04_npm.html           # npm 專案內容
 │   ├─ 05_STM32_IDE.html     # STM32 IDE 專案內容
 │   ├─ 06_dark.html          # Dark 主題專案內容
-│   └─ 07_rock5b_plus.html        # Rock 5B+ 專案
+│   ├─ 07_xmapp.html        # XAMPP 專案內容
 │   └─ 08_certificate.html   # 證書展示區塊
 │
 ├─ uploads/                 # 上傳的圖片檔案
