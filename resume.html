@@ -1,34 +1,110 @@
+<!-- Deedy Resume 、Jake’s Resume -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ping Hsu - Resume (FAANG Version)</title>
+<title>Ping Hsu - Resume</title>
 
 <style>
-body { margin:0; font-family: 'Segoe UI', Arial, sans-serif; background:#f4f6f8; }
-.container { display:flex; max-width:1100px; margin:20px auto; background:#fff; box-shadow:0 10px 30px rgba(0,0,0,0.1);} 
-.sidebar { width:30%; background:#111; color:#fff; padding:25px; }
-.content { width:70%; padding:30px; }
+body{
+  margin:0;
+  font-family: Helvetica, Arial, sans-serif;
+  background:#f4f6f8;
+}
 
-h1 { margin:0; font-size:26px; }
-h2 { border-bottom:2px solid #333; padding-bottom:5px; margin-top:20px; }
-h3 { margin:0; font-size:16px; }
-span { color:#777; font-size:12px; }
+/* LAYOUT */
+.container{
+  display:flex;
+  max-width:1000px;
+  margin:0 auto;
+  background:#fff;
+}
 
-ul { margin:5px 0 10px 18px; }
-li { margin-bottom:4px; }
+/* LEFT */
+.left{
+  width:30%;
+  background:#111;
+  color:#fff;
+  padding:25px;
+}
 
-.section { margin-top:20px; }
+/* RIGHT */
+.right{
+  width:70%;
+  padding:30px;
+}
 
-.photo { width:90px; height:90px; border-radius:50%; overflow:hidden; margin-bottom:15px; }
-.photo img { width:100%; height:100%; object-fit:cover; }
+/* NAME */
+h1{
+  margin:0;
+  font-size:24px;
+  font-weight:700;
+}
 
-.small { font-size:13px; line-height:1.6; }
+.subtitle{
+  font-size:13px;
+  color:#bbb;
+  margin-top:5px;
+}
 
-@media print {
-  body { background:#fff; }
-  .container { box-shadow:none; margin:0; }
+/* HEADERS */
+h2{
+  font-size:13px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  border-bottom:1px solid #ddd;
+  padding-bottom:4px;
+  margin-top:18px;
+}
+
+.left h2{
+  color:#fff;
+  border-bottom:1px solid #444;
+}
+
+/* TEXT */
+p, li{
+  font-size:12.5px;
+  line-height:1.5;
+}
+
+/* LEFT TEXT */
+.left p, .left li{
+  color:#ddd;
+}
+
+/* LIST */
+ul{
+  margin:5px 0 10px 18px;
+}
+
+/* PHOTO */
+.photo{
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  overflow:hidden;
+  margin-bottom:10px;
+  border:2px solid #333;
+}
+
+.photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* INPUT */
+input[type="file"]{
+  margin-top:10px;
+  color:#fff;
+}
+
+/* PRINT */
+@media print{
+  body{ background:#fff; }
+  .container{ box-shadow:none; }
 }
 </style>
 </head>
@@ -37,153 +113,135 @@ li { margin-bottom:4px; }
 
 <div class="container">
 
-<!-- LEFT (Deedy FAANG minimal) -->
-<div class="sidebar">
+<!-- LEFT -->
+<div class="left">
 
 <div class="photo">
   <img id="profilePhoto" src="pics/my.png">
 </div>
 
 <h1>Ping Hsu</h1>
-<p class="small">Senior Embedded / Firmware Engineer</p>
+<div class="subtitle">Senior Embedded / Firmware Engineer</div>
 
-<div class="section small">
-<b>Contact</b><br>
+<h2>Contact</h2>
+<p>
 Taiwan<br>
 pinghsu104@gmail.com<br>
 +886-936-138-808<br>
 linkedin.com/in/ping-h-32b485104
-</div>
+</p>
 
-<div class="section small">
-<b>Core Skills</b>
+<h2>Core Skills</h2>
 <ul>
 <li>Embedded Systems (STM32, ARM, DSP)</li>
-<li>RF & Communication (WiFi, LoRa, UAV)</li>
-<li>AI / Edge Inference (YOLO, NPU)</li>
-<li>C/C++, Python, Linux</li>
+<li>RF / UAV / LoRa / TCP-IP</li>
+<li>AI Edge (YOLO, NPU, RTK)</li>
+<li>C / C++ / Python / Shell</li>
 <li>System Integration & Debugging</li>
 </ul>
-</div>
 
-<div class="section small">
-<b>Languages</b><br>
+<h2>Languages</h2>
+<p>
 Mandarin (Native)<br>
 English (Working proficiency)
-</div>
+</p>
 
 <input type="file" id="photoInput" accept="image/*">
 
 </div>
 
-<!-- RIGHT (FAANG style content) -->
-<div class="content">
+<!-- RIGHT -->
+<div class="right">
 
-<h2>SUMMARY</h2>
+<h2>Summary</h2>
 <p>
-Senior Embedded & Firmware Engineer with 20+ years of experience delivering high-reliability systems across UAV, RF communication, medical devices, and storage platforms. 
-Expert in system integration, real-time debugging, and performance optimization. Proven ability to scale production systems, improve throughput by 3x, and reduce testing time by 40%.
+Senior Embedded & Firmware Engineer with 20+ years of experience in UAV systems, RF communication, storage validation, and embedded system architecture. Strong individual contributor in system-level integration, real-time debugging, and performance optimization. Delivered production systems with 3x throughput improvement and centimeter-level RTK positioning accuracy.
 </p>
 
-<h2>EXPERIENCE</h2>
+<h2>Experience</h2>
 
-<h3>Senior Firmware Engineer (UAV Systems)</h3>
-<span>2025/12 – Present</span>
+<h3>UAV Systems Engineer</h3>
+<p>2025/12 – Present</p>
 <ul>
-<li>Designed autonomous UAV control systems integrating flight control, RF, and video transmission</li>
-<li>Implemented RTK positioning achieving centimeter-level accuracy</li>
-<li>Built Python-based automation tools, reducing testing time by 40%</li>
-<li>Improved system reliability and real-time communication stability</li>
+<li>Designed UAV flight control system integrating RF, video, and control pipelines</li>
+<li>Implemented RTK Base/Rover system achieving centimeter-level positioning accuracy</li>
+<li>Built Python automation framework reducing validation time by 40%</li>
+<li>Developed real-time communication pipeline for UAV telemetry and control systems</li>
 </ul>
 
 <h3>Senior Firmware Engineer – ACHB Medical</h3>
-<span>2025/05 – 2025/08</span>
+<p>2025/05 – 2025/08</p>
 <ul>
-<li>Developed STM32H7-based UI and sensor integration systems</li>
-<li>Designed logging and diagnostics frameworks for failure analysis</li>
-<li>Supported FDA validation and compliance testing (Class I/II)</li>
+<li>Developed STM32H7 embedded system (UI, sensors, USB, I/O integration)</li>
+<li>Built system logging and diagnostics framework for failure analysis</li>
+<li>Supported FDA Class I/II validation and regulatory documentation</li>
 </ul>
 
-<h3>Technical Deputy Manager – YEESTOR</h3>
-<span>2017 – 2025</span>
+<h3>Assistant Technical Manager (IC role) – YEESTOR</h3>
+<p>2017 – 2025</p>
 <ul>
-  <li>Scaled production throughput 3x by building Python-based automated validation frameworks</li>
-  <li>Owned end-to-end PCIe/NVMe validation across performance, stress, and compatibility testing</li>
-  <li>Developed low-level drivers and diagnostic tools (USB, PCIe) for system bring-up and debugging</li>
-  <li>Reduced validation cycle time and increased test coverage across critical scenarios</li>
+<li>Improved production throughput 3x via automated PCIe/NVMe validation frameworks</li>
+<li>Owned end-to-end storage validation (performance, stress, compatibility, reliability)</li>
+<li>Developed low-level driver/debug tools (USB, PCIe, NVMe) for system bring-up</li>
+<li>Built Linux-based automation for large-scale production testing systems</li>
 </ul>
 
-<h3>Deputy Manager – IMEDIPLUS</h3>
-<span>2014 – 2017</span>
+<h3>Assistant Technical Manager (IC role) – IMEDIPLUS</h3>
+<p>2014 – 2017</p>
 <ul>
-<li>Developed firmware for wireless medical devices</li>
-<li>Delivered FDA 510(k) documentation and regulatory compliance</li>
+<li>Developed wireless medical firmware (ECG, wearable IoT systems)</li>
+<li>Designed embedded MCU systems and improved system stability</li>
+<li>Delivered FDA 510(k) technical documentation</li>
 </ul>
 
-<h3>Staff Engineer – SMART</h3>
-<span>2013 – 2014</span>
+<h3>Earlier Experience</h3>
 <ul>
-<li>Built ARM-based validation platforms</li>
-<li>Conducted storage performance and reliability testing</li>
+<li>SSD / eMMC / NAND validation systems (failure analysis, automation tools)</li>
+<li>RF + MCU embedded systems (bootloader, device architecture)</li>
+<li>TCP/IP embedded control systems</li>
+<li>Production test automation systems</li>
 </ul>
 
-<h3>Principal Engineer – KeyStone</h3>
-<span>2010 – 2013</span>
+<h2>Projects</h2>
 <ul>
-<li>Integrated RF and MCU systems for embedded applications</li>
-<li>Developed bootloaders and manufacturing test tools</li>
+<li><b>YOLO Edge Optimization</b> – Optimized NPU vs CPU pipeline, achieving 3x FPS improvement</li>
+<li><b>RF UAV System (ELRS)</b> – Long-range low-latency communication link for UAV applications</li>
+<li><b>Automated Validation Framework</b> – Production-scale testing system for embedded devices</li>
 </ul>
 
-<h3>Senior Engineer – Silicon Motion</h3>
-<span>2005 – 2009</span>
-<ul>
-<li>Developed SSD automation tools and validation systems</li>
-<li>Performed failure analysis and root cause debugging</li>
-</ul>
-
-<h3>Sr. Staff Engineer – ABON-TECH</h3>
-<span>2003 – 2005</span>
-<ul>
-<li>Designed TCP/IP-based remote control systems</li>
-<li>Built network communication architectures</li>
-</ul>
-
-<h2>PROJECTS</h2>
-<ul>
-<li><b>YOLO Edge Inference Optimization</b> – Optimized NPU vs CPU pipeline, improving FPS performance by 3x</li>
-<li><b>RF Communication System (ELRS)</b> – Developed long-range low-latency RF link for UAV systems</li>
-<li><b>Automated Test Framework</b> – Built scalable validation system used in production environments</li>
-</ul>
-
-<h2>EDUCATION</h2>
-<p>Master’s Degree, Electrical Engineering – Minghsin University of Science and Technology (2017)</p>
+<h2>Education</h2>
+<p>
+M.S. Electrical Engineering – Minghsin University of Science and Technology (2017)
+</p>
 
 </div>
 
 </div>
 
 <script>
-const img = document.getElementById('profilePhoto');
-img.onerror = function() {
-  img.src = 'https://gsegria.github.io/XAMPP_SQL/pic/my.png';
+const img=document.getElementById("profilePhoto");
+
+img.onerror=function(){
+  img.src="https://gsegria.github.io/XAMPP_SQL/pic/my.png";
 };
 
-const photoInput = document.getElementById("photoInput");
-photoInput.addEventListener("change", function () {
-  const file = photoInput.files[0];
-  if (file && file.type.startsWith("image/")) {
-    const reader = new FileReader();
-    reader.onload = function (e) {
-      img.src = e.target.result;
-      localStorage.setItem("uploadedPhoto", e.target.result);
+const input=document.getElementById("photoInput");
+
+input.addEventListener("change",function(){
+  const file=this.files[0];
+  if(file && file.type.startsWith("image/")){
+    const reader=new FileReader();
+    reader.onload=e=>{
+      img.src=e.target.result;
+      localStorage.setItem("photo",e.target.result);
     };
     reader.readAsDataURL(file);
   }
 });
 
-window.addEventListener("DOMContentLoaded", () => {
-  const saved = localStorage.getItem("uploadedPhoto");
-  if (saved) img.src = saved;
+window.addEventListener("DOMContentLoaded",()=>{
+  const saved=localStorage.getItem("photo");
+  if(saved) img.src=saved;
 });
 </script>
 
