@@ -1,87 +1,165 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Ping Hsu - Resume</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      margin: 0;
-      padding: 0;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ping Hsu - Resume (FAANG Version)</title>
 
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 30px;
-      background: #fff;
-    }
+<style>
+body { margin:0; font-family: 'Segoe UI', Arial, sans-serif; background:#f4f6f8; }
+.container { display:flex; max-width:1100px; margin:20px auto; background:#fff; box-shadow:0 10px 30px rgba(0,0,0,0.1);} 
+.sidebar { width:30%; background:#111; color:#fff; padding:25px; }
+.content { width:70%; padding:30px; }
 
-    h1, h2, h3 {
-      color: #2c3e50;
-      margin-top: 30px;
-    }
+h1 { margin:0; font-size:26px; }
+h2 { border-bottom:2px solid #333; padding-bottom:5px; margin-top:20px; }
+h3 { margin:0; font-size:16px; }
+span { color:#777; font-size:12px; }
 
-    .contact-info, .section {
-      margin-bottom: 25px;
-    }
+ul { margin:5px 0 10px 18px; }
+li { margin-bottom:4px; }
 
-    .contact-info p {
-      margin: 5px 0;
-    }
+.section { margin-top:20px; }
 
-    ul.skills {
-      list-style-type: square;
-      padding-left: 20px;
-    }
+.photo { width:90px; height:90px; border-radius:50%; overflow:hidden; margin-bottom:15px; }
+.photo img { width:100%; height:100%; object-fit:cover; }
 
-    .job {
-      margin-bottom: 20px;
-    }
+.small { font-size:13px; line-height:1.6; }
 
-    .job span {
-      color: #555;
-      font-size: 0.9em;
-    }
-
-    /* 頭像 */
-    .top-right-photo {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      border: 3px solid #ccc;
-      overflow: hidden;
-      background: #eee;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    }
-
-    .top-right-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .upload-form {
-      position: fixed;
-      top: 150px;
-      right: 20px;
-      background: #fff;
-      padding: 10px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      font-size: 14px;
-    }
-  </style>
+@media print {
+  body { background:#fff; }
+  .container { box-shadow:none; margin:0; }
+}
+</style>
 </head>
+
 <body>
 
-<!-- 頭像 -->
-<div class="top-right-photo">
+<div class="container">
+
+<!-- LEFT (Deedy FAANG minimal) -->
+<div class="sidebar">
+
+<div class="photo">
   <img id="profilePhoto" src="pics/my.png">
+</div>
+
+<h1>Ping Hsu</h1>
+<p class="small">Senior Embedded / Firmware Engineer</p>
+
+<div class="section small">
+<b>Contact</b><br>
+Taiwan<br>
+pinghsu104@gmail.com<br>
++886-936-138-808<br>
+linkedin.com/in/ping-h-32b485104
+</div>
+
+<div class="section small">
+<b>Core Skills</b>
+<ul>
+<li>Embedded Systems (STM32, ARM, DSP)</li>
+<li>RF & Communication (WiFi, LoRa, UAV)</li>
+<li>AI / Edge Inference (YOLO, NPU)</li>
+<li>C/C++, Python, Linux</li>
+<li>System Integration & Debugging</li>
+</ul>
+</div>
+
+<div class="section small">
+<b>Languages</b><br>
+Mandarin (Native)<br>
+English (Working proficiency)
+</div>
+
+<input type="file" id="photoInput" accept="image/*">
+
+</div>
+
+<!-- RIGHT (FAANG style content) -->
+<div class="content">
+
+<h2>SUMMARY</h2>
+<p>
+Senior Embedded & Firmware Engineer with 20+ years of experience delivering high-reliability systems across UAV, RF communication, medical devices, and storage platforms. 
+Expert in system integration, real-time debugging, and performance optimization. Proven ability to scale production systems, improve throughput by 3x, and reduce testing time by 40%.
+</p>
+
+<h2>EXPERIENCE</h2>
+
+<h3>Senior Firmware Engineer (UAV Systems)</h3>
+<span>2025/12 – Present</span>
+<ul>
+<li>Designed autonomous UAV control systems integrating flight control, RF, and video transmission</li>
+<li>Implemented RTK positioning achieving centimeter-level accuracy</li>
+<li>Built Python-based automation tools, reducing testing time by 40%</li>
+<li>Improved system reliability and real-time communication stability</li>
+</ul>
+
+<h3>Senior Firmware Engineer – ACHB Medical</h3>
+<span>2025/05 – 2025/08</span>
+<ul>
+<li>Developed STM32H7-based UI and sensor integration systems</li>
+<li>Designed logging and diagnostics frameworks for failure analysis</li>
+<li>Supported FDA validation and compliance testing (Class I/II)</li>
+</ul>
+
+<h3>Technical Deputy Manager – YEESTOR</h3>
+<span>2017 – 2025</span>
+<ul>
+  <li>Scaled production throughput 3x by building Python-based automated validation frameworks</li>
+  <li>Owned end-to-end PCIe/NVMe validation across performance, stress, and compatibility testing</li>
+  <li>Developed low-level drivers and diagnostic tools (USB, PCIe) for system bring-up and debugging</li>
+  <li>Reduced validation cycle time and increased test coverage across critical scenarios</li>
+</ul>
+
+<h3>Deputy Manager – IMEDIPLUS</h3>
+<span>2014 – 2017</span>
+<ul>
+<li>Developed firmware for wireless medical devices</li>
+<li>Delivered FDA 510(k) documentation and regulatory compliance</li>
+</ul>
+
+<h3>Staff Engineer – SMART</h3>
+<span>2013 – 2014</span>
+<ul>
+<li>Built ARM-based validation platforms</li>
+<li>Conducted storage performance and reliability testing</li>
+</ul>
+
+<h3>Principal Engineer – KeyStone</h3>
+<span>2010 – 2013</span>
+<ul>
+<li>Integrated RF and MCU systems for embedded applications</li>
+<li>Developed bootloaders and manufacturing test tools</li>
+</ul>
+
+<h3>Senior Engineer – Silicon Motion</h3>
+<span>2005 – 2009</span>
+<ul>
+<li>Developed SSD automation tools and validation systems</li>
+<li>Performed failure analysis and root cause debugging</li>
+</ul>
+
+<h3>Sr. Staff Engineer – ABON-TECH</h3>
+<span>2003 – 2005</span>
+<ul>
+<li>Designed TCP/IP-based remote control systems</li>
+<li>Built network communication architectures</li>
+</ul>
+
+<h2>PROJECTS</h2>
+<ul>
+<li><b>YOLO Edge Inference Optimization</b> – Optimized NPU vs CPU pipeline, improving FPS performance by 3x</li>
+<li><b>RF Communication System (ELRS)</b> – Developed long-range low-latency RF link for UAV systems</li>
+<li><b>Automated Test Framework</b> – Built scalable validation system used in production environments</li>
+</ul>
+
+<h2>EDUCATION</h2>
+<p>Master’s Degree, Electrical Engineering – Minghsin University of Science and Technology (2017)</p>
+
+</div>
+
 </div>
 
 <script>
@@ -89,134 +167,14 @@ const img = document.getElementById('profilePhoto');
 img.onerror = function() {
   img.src = 'https://gsegria.github.io/XAMPP_SQL/pic/my.png';
 };
-</script>
 
-<form class="upload-form">
-  <label>上傳大頭貼 (Upload Photo)</label><br>
-  <input type="file" id="photoInput" accept="image/*"><br>
-</form>
-
-<div class="container">
-
-<h1>Ping Hsu</h1>
-<h3>Senior Firmware & Embedded Systems Engineer</h3>
-
-<div class="contact-info">
-  <p>Taiwan | pinghsu104@gmail.com | +886-936-138-808</p>
-  <p><strong>LinkedIn:</strong> linkedin.com/in/ping-h-32b485104</p>
-</div>
-
-<h2>Professional Summary</h2>
-<p>
-Senior Firmware & Embedded Systems Engineer with 20+ years of experience in embedded systems, UAV integration, RTK positioning, RF communications, and automated testing. 
-Proven track record delivering UAV, medical device, and production automation solutions, improving system stability, positioning accuracy, and test efficiency by up to 3x. 
-Experienced with STM32, TI, ARM platforms, cross-platform integration, and regulatory compliance (FDA Class I/II, 510(k)).
-</p>
-
-<h2>Technical Skills</h2>
-<ul class="skills">
-  <li><strong>Embedded Platforms:</strong> STM32, TI C5000/DSP, MSP430, ARM Cortex</li>
-  <li><strong>Programming:</strong> C/C++, Python, C#, Lua, Shell, JavaScript, HTML</li>
-  <li><strong>OS & Tools:</strong> Windows, Linux (Ubuntu/CentOS), STM32CubeIDE, Visual Studio, Qt</li>
-  <li><strong>Communication:</strong> UART, SPI, I2C, GPIO, RF (ExpressLRS 915 MHz), Bluetooth, TCP/IP</li>
-  <li><strong>Testing:</strong> Oscilloscope, Logic Analyzer, NVMe/eMMC/SSD validation, Automation</li>
-  <li><strong>Regulatory:</strong> FDA Class I/II, 510(k), test plans, reports</li>
-  <li><strong>Languages:</strong> Mandarin (Native), English (B2 Reading/Writing)</li>
-</ul>
-
-<h2>Professional Experience</h2>
-
-<div class="job">
-<h3>Senior Firmware Engineer (UAV Systems)</h3>
-<span>Taiwan | 2025/12 – Present</span>
-<ul>
-<li>Designed UAV autonomous flight control systems</li>
-<li>Developed RTK positioning (cm-level accuracy)</li>
-<li>Integrated RF + video transmission systems</li>
-<li>Built Python automation tools (↓ test time 40%)</li>
-</ul>
-</div>
-
-<div class="job">
-<h3>Senior Firmware Engineer – ACHB Medical</h3>
-<span>Taiwan | 2025/05 – 2025/08</span>
-<ul>
-<li>STM32H7 UI + sensor integration</li>
-<li>System logging & diagnostics</li>
-<li>FDA test validation</li>
-</ul>
-</div>
-
-<div class="job">
-<h3>Technical Deputy Manager – YEESTOR</h3>
-<span>Hsinchu | 2017 – 2025</span>
-<ul>
-<li>PCIe / NVMe validation</li>
-<li>Production automation (3x throughput)</li>
-<li>Driver development (USB / PCIe)</li>
-</ul>
-</div>
-
-<div class="job">
-<h3>Deputy Manager – IMEDIPLUS</h3>
-<span>2014 – 2017</span>
-<ul>
-<li>Wireless medical device firmware</li>
-<li>FDA 510(k) documentation</li>
-</ul>
-</div>
-
-<div class="job">
-<h3>Staff Engineer – SMART</h3>
-<span>2013 – 2014</span>
-<ul>
-<li>ARM test platform</li>
-<li>Storage validation</li>
-</ul>
-</div>
-
-<div class="job">
-<h3>Principal Engineer – KeyStone</h3>
-<span>2010 – 2013</span>
-<ul>
-<li>RF + MCU system integration</li>
-<li>Bootloader & test tools</li>
-</ul>
-</div>
-
-<div class="job">
-<h3>Senior Engineer – Silicon Motion</h3>
-<span>2005 – 2009</span>
-<ul>
-<li>SSD automation tools</li>
-<li>Failure analysis</li>
-</ul>
-</div>
-
-<div class="job">
-<h3>Sr. Staff Engineer – ABON-TECH</h3>
-<span>2003 – 2005</span>
-<ul>
-<li>TCP/IP system design</li>
-<li>Remote control architecture</li>
-</ul>
-</div>
-
-<h2>Education</h2>
-<p>Master’s Degree, Electrical Engineering – Minghsin University of Science and Technology (2017)</p>
-
-</div>
-
-<script>
 const photoInput = document.getElementById("photoInput");
-const profilePhoto = document.getElementById("profilePhoto");
-
 photoInput.addEventListener("change", function () {
   const file = photoInput.files[0];
   if (file && file.type.startsWith("image/")) {
     const reader = new FileReader();
     reader.onload = function (e) {
-      profilePhoto.src = e.target.result;
+      img.src = e.target.result;
       localStorage.setItem("uploadedPhoto", e.target.result);
     };
     reader.readAsDataURL(file);
@@ -225,9 +183,7 @@ photoInput.addEventListener("change", function () {
 
 window.addEventListener("DOMContentLoaded", () => {
   const saved = localStorage.getItem("uploadedPhoto");
-  if (saved) {
-    profilePhoto.src = saved;
-  }
+  if (saved) img.src = saved;
 });
 </script>
 
