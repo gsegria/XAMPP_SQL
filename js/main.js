@@ -53,7 +53,7 @@ function loadSection(id, url) {
       container.offsetHeight;
 
       // ✅ ⭐ 新增：只對 dart / rock5b_plus 套 table style
-      if (id === 'section-dart' || id === 'section-rock_5b_plus') {
+      if (id === 'section-dart' || id === 'section-rock_5b_plus' || id === 'section-nvida_jetson') {
         const tables = container.querySelectorAll('table');
 
         tables.forEach(table => {
@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ? "http://localhost/chatbot/sections/02_rock5b_plus.html"
       : "https://gsegria.github.io/XAMPP_SQL/sections/02_rock5b_plus.html",
 
-    "section-rock_5b_plus": isLocal
+    "section-nvida_jetson": isLocal
       ? "http://localhost/chatbot/sections/09_nvida_jetson.html"
       : "https://gsegria.github.io/XAMPP_SQL/sections/09_nvida_jetson.html",
 
