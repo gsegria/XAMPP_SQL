@@ -104,6 +104,10 @@ document.addEventListener("DOMContentLoaded", () => {
       ? "http://localhost/chatbot/sections/02_rock5b_plus.html"
       : "https://gsegria.github.io/XAMPP_SQL/sections/02_rock5b_plus.html",
 
+    "section-rock_5b_plus": isLocal
+      ? "http://localhost/chatbot/sections/09_nvida_jetson.html"
+      : "https://gsegria.github.io/XAMPP_SQL/sections/09_nvida_jetson.html",
+
     "section-medicine": isLocal
       ? "http://localhost/chatbot/sections/03_medicine.html"
       : "https://gsegria.github.io/XAMPP_SQL/sections/03_medicine.html",
