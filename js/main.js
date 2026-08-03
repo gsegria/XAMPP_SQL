@@ -53,7 +53,8 @@ function loadSection(id, url) {
       container.offsetHeight;
 
       // ✅ ⭐ 新增：只對 dart / rock5b_plus 套 table style
-      if (id === 'section-dart' || id === 'section-rock_5b_plus' || id === 'section-nvida_jetson') {
+      // if (id === 'section-dart' || id === 'section-rock_5b_plus' || id === 'section-nvida_jetson') {
+      if (id === 'section-dart' || id === 'section-rock_5b_plus') {
         const tables = container.querySelectorAll('table');
 
         tables.forEach(table => {
