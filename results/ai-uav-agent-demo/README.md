@@ -19,7 +19,7 @@ pip install -r requirements.txt
 python -m uvicorn app.main:app --host 0.0.0.0 --port 8000
 
 # .venv
-cd ~/proj/nvida/ai-uav-agent-demo
+cd ~/proj/nvidia/ai-uav-agent-demo
 source .venv/bin/activate
 pkill -f 'uvicorn.*8000' || true
 python -m uvicorn app.main:app --host 0.0.0.0 --port 8000
@@ -29,7 +29,7 @@ python -m uvicorn app.main:app --host 0.0.0.0 --port 8000
 
 Windows SSH → Jetson:
 ssh jetson
-cd ~/proj/nvida/ai-uav-agent-demo
+cd ~/proj/nvidia/ai-uav-agent-demo
 source .venv/bin/activate
 uvicorn app.main:app --host 0.0.0.0 --port 8000
 
