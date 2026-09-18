@@ -96,9 +96,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 定義各 section 的 URL，根據環境切換
   const sections = {
-    "section-python": isLocal
-      ? "http://localhost/chatbot/sections/01_python.html"
-      : "https://gsegria.github.io/XAMPP_SQL/sections/01_python.html",
 
     "section-rock_5b_plus": isLocal
       ? "http://localhost/chatbot/sections/02_rock5b_plus.html"
@@ -107,6 +104,10 @@ document.addEventListener("DOMContentLoaded", () => {
     "section-nvida_jetson": isLocal
       ? "http://localhost/chatbot/sections/09_nvida_jetson.html"
       : "https://gsegria.github.io/XAMPP_SQL/sections/09_nvida_jetson.html",
+
+    "section-python": isLocal
+      ? "http://localhost/chatbot/sections/01_python.html"
+      : "https://gsegria.github.io/XAMPP_SQL/sections/01_python.html",
 
     "section-medicine": isLocal
       ? "http://localhost/chatbot/sections/03_medicine.html"
