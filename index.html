@@ -1,135 +1,408 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Ping Hsu 的互動履歷 (Interactive Resume)</title>
-<link rel="stylesheet" href="css/style.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ping Hsu | Interactive Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 <div class="wrap">
 
-<!-- 左側目錄按鈕 -->
-<aside class="leftCol">
-  <button data-target="intro" title="介紹 Introduction">🏠</button>
-  <button data-target="section1" title="履歷 Resume">📄</button>
-  <button data-target="section2" title="外部連結 External Links">🔗</button>
-  <button data-target="chatbot" title="PingBot 聊天機器人">🤖</button>
-</aside>
+    <!-- Left Navigation -->
+    <aside class="leftCol">
+        <button data-target="intro" title="介紹 Introduction">🏠</button>
+        <button data-target="section1" title="履歷 Resume">📄</button>
+        <button data-target="section2" title="外部連結 External Links">🔗</button>
+        <button data-target="chatbot" title="PingBot Chatbot">🤖</button>
+    </aside>
 
-<!-- 右側內容 -->
-<main class="rightCol">
-  <section class="introCard" id="intro">
-    <h2>歡迎來到 Ping Hsu 的網站！(Welcome to Ping Hsu's Website!)</h2>
-    <p>今天是美好的一天，願你心情愉快！🌞 (Have a wonderful day!)</p>
-    <div class="button-group-ping">
-      <button class="btn btn-black" onclick="openResume()">打開履歷 (Open Resume)</button>
-      <button class="btn btn-gradient" onclick="open_master_thesis()">打開論文 (Open Master's Thesis - Remote Healthcare System)</button>
-      <button class="btn btn-orange" onclick="openSelfIntroduce()">打開自我介紹 (Open Self Introduction)</button>
-    </div>
-  </section>
+    <main class="rightCol">
 
-  
-<section class="sectionCard" id="section1">
+        <!-- Hero -->
+        <section class="introCard hero-card" id="intro">
+            <div class="hero-content">
+                <button id="languageToggle" class="btn btn-white"
+                        onclick="toggleLanguage()"
+                        style="display:block; margin:0 0 18px auto;">
+                    EN
+                </button>
+                <p class="hero-label">EMBEDDED SYSTEMS · AI · SOFTWARE</p>
 
-  <h3>作品介紹 (Projects Overview)</h3>
+                <h1>Welcome to Ping Hsu's Portfolio</h1>
 
-  <p>
-    Python、XAMPP、JavaScript、HTML、C/C++ 等技術 (Technologies)
-  </p>
+                <p class="hero-description">
+                    嵌入式系統、AI 平台、韌體與軟硬體整合開發。
+                    <br>
+                    Embedded Systems, AI Platforms, Firmware and System Integration.
+                </p>
 
-  <div class="business-card">
-    <a href="pics/business_card.png" target="_blank">
-      <img src="pics/business_card.png"
-           alt="Ping Hsu Business Card">
-    </a>
-  </div>
+                <div class="hero-tags">
+                    <span>Embedded Linux</span>
+                    <span>AI / NPU</span>
+                    <span>C / C++</span>
+                    <span>Python</span>
+                    <span>System Integration</span>
+                </div>
 
-</section>
+                <div class="button-group-ping hero-actions">
+                    <button class="btn btn-black" onclick="openResume()">
+                        打開履歷 (Resume)
+                    </button>
+                    <button class="btn btn-gradient" onclick="open_master_thesis()">
+                        學位論文 (Master's Thesis)
+                    </button>
+                    <button class="btn btn-orange" onclick="openSelfIntroduce()">
+                        自我介紹 (Introduction)
+                    </button>
+                </div>
+            </div>
+        </section>
 
+        <!-- Profile -->
+        <section class="sectionCard portfolio-section" id="section1">
+            <div class="portfolio-heading">
+                <p class="hero-label">ABOUT ME</p>
+                <h2>個人介紹 (Profile)</h2>
+                <p>
+                    Python、XAMPP、JavaScript、HTML、C/C++ 等技術
+                    <br>
+                    Technologies and Development Experience
+                </p>
+            </div>
 
-    <!-- 第1區塊：ROCK 5B+ 專案 -->
-    <section class="sectionCard" id="rock_5b_plus">
-      <h4>ROCK5B+ AI/NPU/韌體專案 (ROCK5B+ Firmware Projects)</h4>
-      <div id="section-rock_5b_plus">載入中... (Loading...)</div>
-    </section>
+            <div class="business-card">
+                <a href="pics/business_card.png" target="_blank">
+                    <img src="pics/business_card.png"
+                         alt="Ping Hsu Business Card">
+                </a>
+            </div>
+        </section>
 
-    <!-- 第2區塊：NVIDIA Jetson 專案 -->
-    <section class="sectionCard" id="nvida_jetson_proj">
-      <h4>NVIDIA AI/GPU/韌體專案 (NVIDIA Firmware Projects)</h4>
-      <div id="section-nvida_jetson">載入中... (Loading...)</div>
-    </section>
+        <!-- Projects -->
+        <section class="portfolio-section" id="projects">
+            <div class="portfolio-heading">
+                <p class="hero-label">PROJECT SHOWCASE</p>
+                <h2>專案作品 (Projects)</h2>
+                <p>依技術領域分類，點擊卡片可展開或收合專案內容。</p>
+            </div>
 
-    <!-- 第3區塊： python 專案 -->
-    <section class="sectionCard" id="python">
-      <h4>Python 專案 (Python Projects)</h4>
-      <div id="section-python">載入中... (Loading...)</div>
-    </section>
+            <div class="project-grid">
 
-    <!-- 第4區塊：medicine 專案 -->
-    <section class="sectionCard" id="medicine">
-      <h4>醫療資料庫專案 (Medical + Database Projects)</h4>
-      <div id="section-medicine">載入中... (Loading...)</div>
-    </section>
+                <!-- 1. ROCK 5B+ -->
+                <section class="sectionCard project-card" id="rock_5b_plus">
+                    <details class="project-details">
+                        <summary class="project-summary">
+                            <span class="project-number">01</span>
+                            <span class="project-title">
+                                ROCK 5B+ AI / NPU / Firmware
+                            </span>
+                            <span class="project-arrow">＋</span>
+                        </summary>
+                        <div class="project-content" id="section-rock_5b_plus">
+                            載入中... (Loading...)
+                        </div>
+                    </details>
+                </section>
 
-    <!-- 第5區塊：npm 專案 -->
-    <section class="sectionCard" id="npm">
-      <h4>Node.js 專案 (NPM / Node.js Projects)</h4>
-      <div id="section-npm">載入中... (Loading...)</div>
-    </section>
+                <!-- 2. NVIDIA Jetson -->
+                <section class="sectionCard project-card" id="nvida_jetson_proj">
+                    <details class="project-details">
+                        <summary class="project-summary">
+                            <span class="project-number">02</span>
+                            <span class="project-title">
+                                NVIDIA Jetson AI / GPU / Firmware
+                            </span>
+                            <span class="project-arrow">＋</span>
+                        </summary>
+                        <div class="project-content" id="section-nvida_jetson">
+                            載入中... (Loading...)
+                        </div>
+                    </details>
+                </section>
 
-    <!-- 第6區塊：STM32 IDE 專案 -->
-    <section class="sectionCard" id="stm32">
-      <h4>STM32 韌體專案 (STM32 Firmware Projects)</h4>
-      <div id="section-stm32">載入中... (Loading...)</div>
-    </section>
+                <!-- 3. Python -->
+                <section class="sectionCard project-card" id="python">
+                    <details class="project-details">
+                        <summary class="project-summary">
+                            <span class="project-number">03</span>
+                            <span class="project-title">Python Projects</span>
+                            <span class="project-arrow">＋</span>
+                        </summary>
+                        <div class="project-content" id="section-python">
+                            載入中... (Loading...)
+                        </div>
+                    </details>
+                </section>
 
-    <!-- 第7區塊：dart 專案 -->
-    <section class="sectionCard" id="dart">
-      <h4>Dart / Flutter 專案 (Dart Projects)</h4>
-      <div id="section-dart">載入中... (Loading...)</div>
-    </section>
+                <!-- 4. Medical -->
+                <section class="sectionCard project-card" id="medicine">
+                    <details class="project-details">
+                        <summary class="project-summary">
+                            <span class="project-number">04</span>
+                            <span class="project-title">
+                                Medical / Database Projects
+                            </span>
+                            <span class="project-arrow">＋</span>
+                        </summary>
+                        <div class="project-content" id="section-medicine">
+                            載入中... (Loading...)
+                        </div>
+                    </details>
+                </section>
 
-    <!-- 第8區塊： XMAPP 專案 -->
-    <section class="sectionCard" id="xmapp">
-      <h4>XAMPP 專案 (Web Projects: HTML / PHP / JS)</h4>
-      <div id="section-xmapp">載入中... (Loading...)</div>
-    </section>
-  
-    <!-- 第9區塊：Certificate -->
-    <section class="sectionCard" id="certificates">
-      <h4>課程證書 (Certificates)</h4>
-      <div id="section-certificate">載入中... (Loading...)</div>
-    </section>
+                <!-- 5. Node.js -->
+                <section class="sectionCard project-card" id="npm">
+                    <details class="project-details">
+                        <summary class="project-summary">
+                            <span class="project-number">05</span>
+                            <span class="project-title">Node.js / NPM Projects</span>
+                            <span class="project-arrow">＋</span>
+                        </summary>
+                        <div class="project-content" id="section-npm">
+                            載入中... (Loading...)
+                        </div>
+                    </details>
+                </section>
 
+                <!-- 6. STM32 -->
+                <section class="sectionCard project-card" id="stm32">
+                    <details class="project-details">
+                        <summary class="project-summary">
+                            <span class="project-number">06</span>
+                            <span class="project-title">STM32 Firmware Projects</span>
+                            <span class="project-arrow">＋</span>
+                        </summary>
+                        <div class="project-content" id="section-stm32">
+                            載入中... (Loading...)
+                        </div>
+                    </details>
+                </section>
 
-  <section class="sectionCard" id="section2">
-    <h3>外部連結 (External Links)</h3>
-    <div class="buttons">
-      <button class="btn btn-gradient" onclick="open104Home()">前往 104 (Go to 104 Job Bank)</button>
-      <button class="btn btn-red" onclick="openPingHsu104()">前往個人 104 (My 104 Profile)</button>
-      <button class="btn btn-green" onclick="openLinkedIn()">前往 LinkedIn</button>
-      <button class="btn btn-yellow" onclick="openLinkedInPingHsu()">前往個人 LinkedIn (My LinkedIn)</button>
-      <button class="btn btn-pink" onclick="openNotion()">前往 Notion</button>
-      <button class="btn btn-purple" onclick="openPingbot2()">前往 PingBot</button>
-      <button class="btn btn-gray" onclick="openPingLocalGame()">前往本地網頁遊戲 (Local Web Game)</button>
-      <button class="btn btn-gray" onclick="openPingGitGame()">前往 Git 網頁遊戲 (Git Web Game)</button>
-    </div>
-  </section>
+                <!-- 7. Dart / Flutter -->
+                <section class="sectionCard project-card" id="dart">
+                    <details class="project-details">
+                        <summary class="project-summary">
+                            <span class="project-number">07</span>
+                            <span class="project-title">Dart / Flutter Projects</span>
+                            <span class="project-arrow">＋</span>
+                        </summary>
+                        <div class="project-content" id="section-dart">
+                            載入中... (Loading...)
+                        </div>
+                    </details>
+                </section>
 
-  <section class="sectionCard" id="chatbot">
-    <h3>🤖 與 PingBot 聊聊 (Chat with PingBot - Unauthorized)</h3>
-    <div id="chatbox"></div>
-    <div class="chatControls">
-      <input type="text" id="userInput" placeholder="輸入你的問題... (Enter your question...)" />
-      <button class="btn btn-black" onclick="sendMessage()">送出 (Send)</button>
-      <button class="btn btn-gray" onclick="clearChat()">清除 (Clear)</button>
-    </div>
-  </section>
-</main>
+                <!-- 8. XAMPP -->
+                <section class="sectionCard project-card" id="xmapp">
+                    <details class="project-details">
+                        <summary class="project-summary">
+                            <span class="project-number">08</span>
+                            <span class="project-title">
+                                XAMPP / HTML / PHP / JavaScript
+                            </span>
+                            <span class="project-arrow">＋</span>
+                        </summary>
+                        <div class="project-content" id="section-xmapp">
+                            載入中... (Loading...)
+                        </div>
+                    </details>
+                </section>
+
+                <!-- 9. Certificates -->
+                <section class="sectionCard project-card" id="certificates">
+                    <details class="project-details">
+                        <summary class="project-summary">
+                            <span class="project-number">09</span>
+                            <span class="project-title">Certificates</span>
+                            <span class="project-arrow">＋</span>
+                        </summary>
+                        <div class="project-content" id="section-certificate">
+                            載入中... (Loading...)
+                        </div>
+                    </details>
+                </section>
+
+            </div>
+        </section>
+
+        <!-- External Links -->
+        <section class="sectionCard portfolio-section" id="section2">
+            <div class="portfolio-heading">
+                <p class="hero-label">CONNECT</p>
+                <h2>外部連結 (External Links)</h2>
+            </div>
+
+            <div class="buttons">
+                <button class="btn btn-gradient" onclick="open104Home()">
+                    前往 104 (104 Job Bank)
+                </button>
+                <button class="btn btn-red" onclick="openPingHsu104()">
+                    個人 104 履歷 (My 104 Profile)
+                </button>
+                <button class="btn btn-green" onclick="openLinkedIn()">
+                    LinkedIn
+                </button>
+                <button class="btn btn-yellow" onclick="openLinkedInPingHsu()">
+                    個人 LinkedIn (My LinkedIn)
+                </button>
+                <button class="btn btn-pink" onclick="openNotion()">
+                    Notion
+                </button>
+                <button class="btn btn-purple" onclick="openPingbot2()">
+                    PingBot
+                </button>
+                <button class="btn btn-gray" onclick="openPingLocalGame()">
+                    本地網頁遊戲 (Local Web Game)
+                </button>
+                <button class="btn btn-gray" onclick="openPingGitGame()">
+                    Git 網頁遊戲 (Git Web Game)
+                </button>
+            </div>
+        </section>
+
+        <!-- Chatbot -->
+        <section class="sectionCard portfolio-section" id="chatbot">
+            <div class="portfolio-heading">
+                <p class="hero-label">AI CHATBOT</p>
+                <h2>與 PingBot 聊聊 (Chat with PingBot)</h2>
+            </div>
+
+            <div id="chatbox"></div>
+
+            <div class="chatControls">
+                <input type="text" id="userInput"
+                       placeholder="輸入你的問題... (Enter your question...)">
+                <button class="btn btn-black" onclick="sendMessage()">
+                    送出 (Send)
+                </button>
+                <button class="btn btn-gray" onclick="clearChat()">
+                    清除 (Clear)
+                </button>
+            </div>
+        </section>
+
+        <footer class="site-footer">
+            <p>© Ping Hsu | Personal Portfolio</p>
+            <p>Embedded Systems · AI · Firmware · Software</p>
+        </footer>
+
+    </main>
 </div>
 
 <script src="js/main.js"></script>
 <script src="js/chatbot.js"></script>
+
+
+<script>
+let currentLanguage = "zh";
+
+function toggleLanguage() {
+    currentLanguage = currentLanguage === "zh" ? "en" : "zh";
+    const en = currentLanguage === "en";
+
+    const setText = (selector, zh, english) => {
+        const element = document.querySelector(selector);
+        if (element) element.textContent = en ? english : zh;
+    };
+
+    const setButtons = (selector, values) => {
+        document.querySelectorAll(selector).forEach((element, index) => {
+            if (values[index]) element.textContent = values[index][en ? 1 : 0];
+        });
+    };
+
+    // Hero
+    setText(".hero-card h1",
+        "Welcome to Ping Hsu's Portfolio",
+        "Welcome to Ping Hsu's Portfolio");
+    setText(".hero-description",
+        "嵌入式系統、AI 平台、韌體與軟硬體整合開發。",
+        "Embedded Systems, AI Platforms, Firmware and System Integration.");
+
+    setButtons(".hero-actions button", [
+        ["打開履歷 (Resume)", "Resume"],
+        ["學位論文 (Master's Thesis)", "Master's Thesis"],
+        ["自我介紹 (Introduction)", "Introduction"]
+    ]);
+
+    // Profile
+    setText("#section1 .portfolio-heading h2",
+        "個人介紹 (Profile)", "Profile");
+    setText("#section1 .portfolio-heading > p:last-child",
+        "Python、XAMPP、JavaScript、HTML、C/C++ 等技術",
+        "Technologies: Python, XAMPP, JavaScript, HTML, C/C++");
+
+    // Projects
+    setText("#projects .portfolio-heading h2",
+        "專案作品 (Projects)", "Projects");
+    setText("#projects .portfolio-heading > p:last-child",
+        "依技術領域分類，點擊卡片可展開或收合專案內容。",
+        "Projects are organized by technology. Click a card to expand or collapse.");
+
+    setButtons(".project-title", [
+        ["ROCK 5B+ AI / NPU / Firmware", "ROCK 5B+ AI / NPU / Firmware"],
+        ["NVIDIA Jetson AI / GPU / Firmware", "NVIDIA Jetson AI / GPU / Firmware"],
+        ["Python Projects", "Python Projects"],
+        ["Medical / Database Projects", "Medical / Database Projects"],
+        ["Node.js / NPM Projects", "Node.js / NPM Projects"],
+        ["STM32 Firmware Projects", "STM32 Firmware Projects"],
+        ["Dart / Flutter Projects", "Dart / Flutter Projects"],
+        ["XAMPP / HTML / PHP / JavaScript", "XAMPP / HTML / PHP / JavaScript"],
+        ["Certificates", "Certificates"]
+    ]);
+
+    // External links
+    setText("#section2 .portfolio-heading h2",
+        "外部連結 (External Links)", "External Links");
+    setButtons("#section2 .buttons button", [
+        ["前往 104 (104 Job Bank)", "104 Job Bank"],
+        ["個人 104 履歷 (My 104 Profile)", "My 104 Profile"],
+        ["LinkedIn", "LinkedIn"],
+        ["個人 LinkedIn (My LinkedIn)", "My LinkedIn"],
+        ["Notion", "Notion"],
+        ["PingBot", "PingBot"],
+        ["本地網頁遊戲 (Local Web Game)", "Local Web Game"],
+        ["Git 網頁遊戲 (Git Web Game)", "Git Web Game"]
+    ]);
+
+    // Chatbot
+    setText("#chatbot .portfolio-heading h2",
+        "與 PingBot 聊聊 (Chat with PingBot)",
+        "Chat with PingBot");
+
+    const input = document.getElementById("userInput");
+    if (input) {
+        input.placeholder = en
+            ? "Enter your question..."
+            : "輸入你的問題... (Enter your question...)";
+    }
+
+    setButtons("#chatbot .chatControls button", [
+        ["送出 (Send)", "Send"],
+        ["清除 (Clear)", "Clear"]
+    ]);
+
+    // Navigation tooltips
+    const navTitles = document.querySelectorAll(".leftCol button");
+    const zhTitles = ["首頁", "個人介紹", "外部連結", "聊天機器人"];
+    const enTitles = ["Home", "Profile", "External Links", "Chatbot"];
+
+    navTitles.forEach((button, index) => {
+        button.title = (en ? enTitles : zhTitles)[index];
+    });
+
+    // Language button and document title
+    document.getElementById("languageToggle").textContent =
+        en ? "繁中" : "EN";
+
+    document.documentElement.lang = en ? "en" : "zh-TW";
+    document.title = en
+        ? "Ping Hsu | Interactive Portfolio"
+        : "Ping Hsu | 個人作品集";
+}
+</script>
+
 </body>
 </html>
