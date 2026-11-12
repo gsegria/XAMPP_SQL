@@ -1,0 +1,208 @@
+cd ~/proj/XAMPP_SQL
+
+cat > css/resume.css <<'CSS'
+/* =================================
+   Resume - Deedy / Jake's Resume
+   ================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  background: #f4f6f8;
+  color: #222;
+}
+
+/* LAYOUT */
+.container {
+  display: flex;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  background: #fff;
+}
+
+/* LEFT */
+.left {
+  width: 30%;
+  background: #111;
+  color: #fff;
+  padding: 25px;
+  flex-shrink: 0;
+}
+
+/* RIGHT */
+.right {
+  width: 70%;
+  min-width: 0;
+  padding: 30px;
+}
+
+/* NAME */
+h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: #bbb;
+  margin-top: 5px;
+}
+
+/* HEADERS */
+h2 {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 4px;
+  margin-top: 18px;
+}
+
+.left h2 {
+  color: #fff;
+  border-bottom: 1px solid #444;
+}
+
+/* EXPERIENCE HEADINGS */
+h3 {
+  font-size: 14px;
+  margin: 14px 0 5px;
+}
+
+/* TEXT */
+p,
+li {
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+
+.left p,
+.left li {
+  color: #ddd;
+}
+
+/* LIST */
+ul {
+  margin: 5px 0 10px 18px;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 3px;
+}
+
+/* PROFILE PHOTO */
+.photo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 10px;
+  border: 2px solid #333;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* TECHNICAL PROFILE BANNER */
+.profile-banner {
+  width: 100%;
+  margin: 0 0 22px;
+  padding: 12px;
+  background: #f5f7fa;
+  border: 1px solid #dce2ea;
+  border-radius: 10px;
+}
+
+.profile-banner img {
+  display: block;
+  width: 100%;
+  max-height: 180px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+/* SUMMARY */
+.summary-content,
+.summary-text {
+  width: 100%;
+}
+
+.summary-text p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+/* LINKS */
+a {
+  color: #1769aa;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* PHOTO INPUT */
+input[type="file"] {
+  margin-top: 10px;
+  max-width: 100%;
+  color: #fff;
+  font-size: 11px;
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left,
+  .right {
+    width: 100%;
+  }
+
+  .left {
+    padding: 22px;
+  }
+
+  .right {
+    padding: 22px;
+  }
+
+  .profile-banner {
+    padding: 8px;
+    margin-bottom: 18px;
+  }
+
+  .profile-banner img {
+    max-height: 150px;
+  }
+}
+
+/* PRINT */
+@media print {
+  body {
+    background: #fff;
+  }
+
+  .container {
+    max-width: none;
+    box-shadow: none;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+}
+CSS
