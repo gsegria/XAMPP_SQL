@@ -1,3 +1,4 @@
+// Pingbot.js
 const API_BASE_URL = "https://pingbot-ai.onrender.com";
 
 async function sendMessage() {

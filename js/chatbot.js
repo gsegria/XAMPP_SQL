@@ -1,3 +1,4 @@
+// chatbot.js
 // PingBot - Gemini API
 const API_BASE_URL = "https://pingbot-ai.onrender.com";
 

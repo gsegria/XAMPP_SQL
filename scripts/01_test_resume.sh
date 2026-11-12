@@ -5,6 +5,13 @@ set -e
 PROJECT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 PORT=8000
 
+# Auto detect ROCK 5B+ LAN IP
+LOCAL_IP=$(hostname -I | awk '{print $1}')
+
+if [ -z "$LOCAL_IP" ]; then
+    LOCAL_IP="127.0.0.1"
+fi
+
 cd "$PROJECT_DIR"
 
 echo "=================================="
@@ -33,6 +40,7 @@ echo "URLs:"
 echo "Resume : http://127.0.0.1:${PORT}/resume.html"
 echo "PingBot: http://127.0.0.1:${PORT}/pingbot.html"
 echo "Home   : http://127.0.0.1:${PORT}/"
+echo "ROCK5B+ : http://${LOCAL_IP}:${PORT}/"
 echo "Press Ctrl+C to stop."
 echo "=================================="
 
