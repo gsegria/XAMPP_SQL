@@ -29,7 +29,10 @@ if ss -ltn | grep -q ":${PORT} "; then
 fi
 
 echo "[OK] Starting local server..."
-echo "URL: http://127.0.0.1:${PORT}/resume.html"
+echo "URLs:"
+echo "Resume : http://127.0.0.1:${PORT}/resume.html"
+echo "PingBot: http://127.0.0.1:${PORT}/pingbot.html"
+echo "Home   : http://127.0.0.1:${PORT}/"
 echo "Press Ctrl+C to stop."
 echo "=================================="
 
