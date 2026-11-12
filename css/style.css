@@ -205,35 +205,33 @@ body {
   .leftCol button{width:56px;height:56px;}
 }
 
-/* ---------- Projects Overview 圖片展示 ---------- */
+/* ---------- Projects Overview Business Card ---------- */
 
-.project-overview {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+.business-card {
+  width: 100%;
+  margin: 20px auto 5px;
+  text-align: center;
 }
 
-.project-text {
-  flex: 1;
-}
-
-.project-image img {
-  width: 180px;
+.business-card img {
+  width: 100%;
+  max-width: 650px;
   height: auto;
   display: block;
+  margin: 0 auto;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  cursor: pointer;
+}
+
+/* 點擊圖片查看原始尺寸 */
+.business-card a {
+  display: block;
 }
 
 /* 手機版 */
 @media(max-width:600px) {
-  .project-overview {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .project-image img {
-    width: 160px;
+  .business-card img {
+    max-width: 100%;
   }
 }
