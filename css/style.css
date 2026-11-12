@@ -59,7 +59,7 @@ body {
 /* 調整圖片跟視頻寬度，高度自動等比例縮放 */
 .denoise-table img,
 .denoise-table video {
-  width: 180px;
+  width: 260px;
   height: auto;
   display: block;
   margin: auto;
