@@ -24,3 +24,6 @@ ENV/
 *.tmp
 *.bak
 pp.bat
+
+
+00_*.sh
